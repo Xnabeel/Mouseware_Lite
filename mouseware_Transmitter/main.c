@@ -88,8 +88,8 @@
 #define POWER                           6          
 #define ICM_INT_2                       20
 
-#define ALRT                            4            
-
+#define ALRT                            6            
+#define KILL                            4
 #define INDICATION_LED_1                12                                          /**< Blue LED indication for BLE connection. */
 
 char str[30];
@@ -160,7 +160,8 @@ static void go_to_sleep(void)
     if(idle_count>=4000)
     {
        idle_count=0;
-       sleep_mode_enter();
+       nrf_gpio_pin_clear(INDICATION_LED_1);
+       nrf_gpio_pin_clear(KILL);
     }
 
     if((mousex == 0) && (mousey == 0))
@@ -512,16 +513,12 @@ static void sleep_mode_enter(void)
     //// Prepare wakeup buttons.
     //uint32_t err_code = bsp_btn_ble_sleep_mode_prepare();
     //APP_ERROR_CHECK(err_code);
-    nrf_gpio_pin_set(INDICATION_LED_1);
+    nrf_gpio_pin_clear(INDICATION_LED_1);
 
-    nrf_drv_gpiote_in_config_t in_config = GPIOTE_CONFIG_IN_SENSE_HITOLO(false);     //Configure to generate interrupt and wakeup on pin signal low. "false" means that gpiote will use the PORT event, which is low power, i.e. does not add any noticable current consumption (<<1uA). Setting this to "true" will make the gpiote module use GPIOTE->IN events which add ~8uA for nRF52 and ~1mA for nRF51.
-    uint32_t err_code = nrf_drv_gpiote_in_init(POWER, &in_config, NULL);             //Initialize the wake-up pin
-    APP_ERROR_CHECK(err_code);                                                       //Check error code returned
-    nrf_drv_gpiote_in_event_enable(POWER, true);                            //Enable event and interrupt for the wakeup pin
     NRF_LOG_INFO("Sleep!");
 
     // Go to system-off mode (this function will not return; wakeup will cause a reset).
-    err_code = sd_power_system_off();
+    uint32_t err_code = sd_power_system_off();
     APP_ERROR_CHECK(err_code);
 }
 
@@ -565,7 +562,7 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
         case BLE_GAP_EVT_CONNECTED:
             NRF_LOG_INFO("Connected");
             nrfx_timer_disable(&TIMER_LED);
-            nrf_gpio_pin_set(INDICATION_LED_1);
+            nrf_gpio_pin_clear(INDICATION_LED_1);
             //err_code = bsp_indication_set(BSP_INDICATE_CONNECTED);
             //APP_ERROR_CHECK(err_code);
             m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
@@ -575,7 +572,7 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
             break;
 
         case BLE_GAP_EVT_DISCONNECTED:
-            nrf_gpio_pin_set(INDICATION_LED_1); //Modified
+            nrf_gpio_pin_clear(INDICATION_LED_1); //Modified
             nrfx_timer_enable(&TIMER_LED);
             NRF_LOG_INFO("Disconnected");
             // LED indication will be changed when advertising starts.
@@ -975,6 +972,8 @@ int main(void)
     bool erase_bonds;
     nrf_gpio_cfg_output(INDICATION_LED_1);
     nrf_gpio_pin_set(INDICATION_LED_1);
+    nrf_gpio_cfg_output(KILL);
+    nrf_gpio_pin_set(KILL);
 
     // Initialize.    
     log_init();

@@ -59,8 +59,8 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="975" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../main.c" selected="0" top="960" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="99" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/util/app_error_weak.c" selected="1" top="84" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="27" y="21" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../main.c" selected="1" top="12" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="99" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/util/app_error_weak.c" selected="0" top="66" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="2" y="94" useTextEdit="1" openedFrom="C:/Nrf_sdk/nRF5_SDK_17.0.2_d674dde/examples/mouseware_transmitter with DFU integrate/mouseware_Transmitter/main.c" useBinaryEdit="0" left="0" path="../../../../../../components/ble/ble_services/ble_dfu/ble_dfu.h" selected="0" top="81" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="60" useTextEdit="1" openedFrom="C:/Nrf_sdk/nRF5_SDK_17.0.2_d674dde/examples/mouseware_transmitter with DFU integrate/mouseware_Transmitter/main.c" useBinaryEdit="0" left="0" path="../../../../../../components/ble/ble_services/ble_dfu/ble_dfu_unbonded.c" selected="0" top="47" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="8" y="64" useTextEdit="1" openedFrom="C:/Nrf_sdk/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_dfu/ble_dfu_unbonded.c" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/bootloader/ble_dfu/nrf_dfu_ble_svci_bond_sharing.h" selected="0" top="55" codecName="Default"/>
@@ -84,5 +84,5 @@
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../max17048.h" selected="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="C:/nRF5_SDK_17.0.2_d674dde/examples/firmware - New Lite/mouseware_Transmitter/icm20602_i2c.c" useBinaryEdit="0" left="0" path="../../../icm20602_i2c.h" selected="0" top="0" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="mouseware_nrf52810" fileDialogDefaultFilter="*.c;*.h" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Nrf_sdk/nRF5_SDK_17.0.2_d674dde/examples/Mouseware_Firmware_final/mouseware_Transmitter" debugSearchPath="" autoConnectCapabilities="3711"/>
+ <ARMCrossStudioWindow activeProject="mouseware_nrf52810" fileDialogDefaultFilter="*.c;*.h" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Nrf_sdk/nRF5_SDK_17.0.2_d674dde/examples/Mouseware_Firmware_final/mouseware_Transmitter" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
