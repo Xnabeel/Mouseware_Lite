@@ -10591,7 +10591,7 @@ FLASH            0x0000000000000000 0x0000000000030000 xw
 Linker script and memory map
 
                 0x0000000000000000                __do_debug_operation = __do_debug_operation_mempoll
-                0x0000000000022890                __vfprintf = __vfprintf_long
+                0x0000000000022884                __vfprintf = __vfprintf_long
                 0x0000000000000000                __vfscanf = __vfscanf_long
                 0x0000000020000000                __RAM1_segment_start__ = 0x20000000
                 0x0000000020006000                __RAM1_segment_end__ = 0x20006000
@@ -10718,7 +10718,7 @@ Linker script and memory map
                 0x0000000000000001                . = ASSERT (((__init_rodata_start__ == __init_rodata_end__) || ((__init_rodata_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .init_rodata is too large to fit in FLASH memory segment)
                 0x00000000000193ec                __text_load_start__ = ALIGN (__init_rodata_end__, 0x4)
 
-.text           0x00000000000193ec     0x9ae0
+.text           0x00000000000193ec     0x9ad4
                 0x00000000000193ec                __text_start__ = .
  *(.text .text.* .glue_7t .glue_7 .gnu.linkonce.t.* .gcc_except_table .ARM.extab* .gnu.linkonce.armextab.*)
  .glue_7        0x00000000000193ec        0x0 linker stubs
@@ -11264,774 +11264,772 @@ Linker script and memory map
                 0x000000000001d138       0x80 Output/Release/Obj/mouseware_nrf52810/bsp_btn_ble.o
  .text.sd_power_mode_set
                 0x000000000001d1b8        0x4 Output/Release/Obj/mouseware_nrf52810/main.o
- .text.sd_power_system_off
-                0x000000000001d1bc        0x4 Output/Release/Obj/mouseware_nrf52810/main.o
  .text.sd_power_dcdc_mode_set
+                0x000000000001d1bc        0x4 Output/Release/Obj/mouseware_nrf52810/main.o
+ .text.sd_ble_gap_disconnect
                 0x000000000001d1c0        0x4 Output/Release/Obj/mouseware_nrf52810/main.o
- .text.sd_ble_gap_disconnect
+ .text.sd_ble_gap_ppcp_set
                 0x000000000001d1c4        0x4 Output/Release/Obj/mouseware_nrf52810/main.o
- .text.sd_ble_gap_ppcp_set
-                0x000000000001d1c8        0x4 Output/Release/Obj/mouseware_nrf52810/main.o
  .text.sd_ble_gap_device_name_set
+                0x000000000001d1c8        0x4 Output/Release/Obj/mouseware_nrf52810/main.o
+ .text.sd_ble_gap_sec_params_reply
                 0x000000000001d1cc        0x4 Output/Release/Obj/mouseware_nrf52810/main.o
- .text.sd_ble_gap_sec_params_reply
-                0x000000000001d1d0        0x4 Output/Release/Obj/mouseware_nrf52810/main.o
  .text.sd_ble_gap_phy_update
+                0x000000000001d1d0        0x4 Output/Release/Obj/mouseware_nrf52810/main.o
+ .text.sd_ble_gatts_sys_attr_set
                 0x000000000001d1d4        0x4 Output/Release/Obj/mouseware_nrf52810/main.o
- .text.sd_ble_gatts_sys_attr_set
-                0x000000000001d1d8        0x4 Output/Release/Obj/mouseware_nrf52810/main.o
  .text.nus_data_handler
-                0x000000000001d1dc       0x10 Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d1d8       0x10 Output/Release/Obj/mouseware_nrf52810/main.o
  .text.sleep_mode_enter
-                0x000000000001d1ec       0x40 Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d1e8       0x38 Output/Release/Obj/mouseware_nrf52810/main.o
  .text.on_adv_evt
-                0x000000000001d22c        0x8 Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d220        0x8 Output/Release/Obj/mouseware_nrf52810/main.o
  .text.nrf_qwr_error_handler
-                0x000000000001d234        0x4 Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d228        0x4 Output/Release/Obj/mouseware_nrf52810/main.o
  .text.disconnect
-                0x000000000001d238       0x38 Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d22c       0x38 Output/Release/Obj/mouseware_nrf52810/main.o
  .text.app_timer_periodic_handler
-                0x000000000001d270      0x17c Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d264      0x17c Output/Release/Obj/mouseware_nrf52810/main.o
  .text.ble_evt_handler
-                0x000000000001d3ec      0x120 Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d3e0      0x120 Output/Release/Obj/mouseware_nrf52810/main.o
  .text.ble_dfu_evt_handler
-                0x000000000001d50c       0xac Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d500       0xac Output/Release/Obj/mouseware_nrf52810/main.o
  .text.on_conn_params_evt
-                0x000000000001d5b8       0x20 Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d5ac       0x20 Output/Release/Obj/mouseware_nrf52810/main.o
  .text.app_shutdown_handler
-                0x000000000001d5d8       0x4c Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d5cc       0x4c Output/Release/Obj/mouseware_nrf52810/main.o
  .text.buttonless_dfu_sdh_state_observer
-                0x000000000001d624       0x16 Output/Release/Obj/mouseware_nrf52810/main.o
- *fill*         0x000000000001d63a        0x2 
+                0x000000000001d618       0x16 Output/Release/Obj/mouseware_nrf52810/main.o
+ *fill*         0x000000000001d62e        0x2 
  .text.bsp_event_handler
-                0x000000000001d63c       0x4c Output/Release/Obj/mouseware_nrf52810/main.o
-                0x000000000001d63c                bsp_event_handler
+                0x000000000001d630       0x4c Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d630                bsp_event_handler
  .text.timer1_handler
-                0x000000000001d688       0x1c Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d67c       0x1c Output/Release/Obj/mouseware_nrf52810/main.o
  .text.gatt_evt_handler
-                0x000000000001d6a4       0x44 Output/Release/Obj/mouseware_nrf52810/main.o
-                0x000000000001d6a4                gatt_evt_handler
+                0x000000000001d698       0x44 Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d698                gatt_evt_handler
  .text.conn_params_error_handler
-                0x000000000001d6e8        0x4 Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d6dc        0x4 Output/Release/Obj/mouseware_nrf52810/main.o
  .text.gatt_init
-                0x000000000001d6ec       0x2c Output/Release/Obj/mouseware_nrf52810/main.o
-                0x000000000001d6ec                gatt_init
+                0x000000000001d6e0       0x2c Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d6e0                gatt_init
  .text.twi_init
-                0x000000000001d718       0x5c Output/Release/Obj/mouseware_nrf52810/main.o
-                0x000000000001d718                twi_init
+                0x000000000001d70c       0x5c Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d70c                twi_init
  .text.write_register
-                0x000000000001d774       0x60 Output/Release/Obj/mouseware_nrf52810/main.o
-                0x000000000001d774                write_register
+                0x000000000001d768       0x60 Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d768                write_register
  .text.read_register
-                0x000000000001d7d4       0x40 Output/Release/Obj/mouseware_nrf52810/main.o
-                0x000000000001d7d4                read_register
+                0x000000000001d7c8       0x40 Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d7c8                read_register
  .text.startup.main
-                0x000000000001d814      0x2f4 Output/Release/Obj/mouseware_nrf52810/main.o
-                0x000000000001d814                main
+                0x000000000001d808      0x2f4 Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000001d808                main
  .text.nrf_delay_ms.part.0
-                0x000000000001db08       0x1c Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
+                0x000000000001dafc       0x1c Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
  .text.ICM20602_who_am_i
-                0x000000000001db24       0x64 Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
-                0x000000000001db24                ICM20602_who_am_i
+                0x000000000001db18       0x64 Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
+                0x000000000001db18                ICM20602_who_am_i
  .text.ICM20602_read_accel
-                0x000000000001db88       0x4c Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
-                0x000000000001db88                ICM20602_read_accel
+                0x000000000001db7c       0x4c Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
+                0x000000000001db7c                ICM20602_read_accel
  .text.ICM20602_read_gyro
-                0x000000000001dbd4       0x4c Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
-                0x000000000001dbd4                ICM20602_read_gyro
+                0x000000000001dbc8       0x4c Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
+                0x000000000001dbc8                ICM20602_read_gyro
  .text.wake_on_motion
-                0x000000000001dc20      0x18c Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
-                0x000000000001dc20                wake_on_motion
+                0x000000000001dc14      0x18c Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
+                0x000000000001dc14                wake_on_motion
  .text.ICM20602_init
-                0x000000000001ddac      0x248 Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
-                0x000000000001ddac                ICM20602_init
+                0x000000000001dda0      0x248 Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
+                0x000000000001dda0                ICM20602_init
  .text.sd_ble_gatts_service_add
-                0x000000000001dff4        0x4 Output/Release/Obj/mouseware_nrf52810/ble_cus.o
+                0x000000000001dfe8        0x4 Output/Release/Obj/mouseware_nrf52810/ble_cus.o
  .text.sd_ble_uuid_vs_add
-                0x000000000001dff8        0x4 Output/Release/Obj/mouseware_nrf52810/ble_cus.o
+                0x000000000001dfec        0x4 Output/Release/Obj/mouseware_nrf52810/ble_cus.o
  .text.ble_cus_init
-                0x000000000001dffc       0x5c Output/Release/Obj/mouseware_nrf52810/ble_cus.o
-                0x000000000001dffc                ble_cus_init
+                0x000000000001dff0       0x5c Output/Release/Obj/mouseware_nrf52810/ble_cus.o
+                0x000000000001dff0                ble_cus_init
  .text.MAX17048_read_soc
-                0x000000000001e058       0x6c Output/Release/Obj/mouseware_nrf52810/max17048.o
-                0x000000000001e058                MAX17048_read_soc
+                0x000000000001e04c       0x6c Output/Release/Obj/mouseware_nrf52810/max17048.o
+                0x000000000001e04c                MAX17048_read_soc
  .text._GetAvailWriteSpace
-                0x000000000001e0c4       0x12 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
+                0x000000000001e0b8       0x12 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
  .text._WriteNoCheck
-                0x000000000001e0d6       0x38 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
+                0x000000000001e0ca       0x38 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
  .text._WriteBlocking
-                0x000000000001e10e       0x52 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
- .text._DoInit  0x000000000001e160       0x60 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
+                0x000000000001e102       0x52 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
+ .text._DoInit  0x000000000001e154       0x60 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
  .text.SEGGER_RTT_WriteNoLock
-                0x000000000001e1c0       0x60 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
-                0x000000000001e1c0                SEGGER_RTT_WriteNoLock
+                0x000000000001e1b4       0x60 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
+                0x000000000001e1b4                SEGGER_RTT_WriteNoLock
  .text.SEGGER_RTT_Init
-                0x000000000001e220        0x4 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
-                0x000000000001e220                SEGGER_RTT_Init
+                0x000000000001e214        0x4 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
+                0x000000000001e214                SEGGER_RTT_Init
  .text.sd_ble_gap_addr_get
-                0x000000000001e224        0x4 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
+                0x000000000001e218        0x4 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
  .text.sd_ble_gap_appearance_get
-                0x000000000001e228        0x4 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
+                0x000000000001e21c        0x4 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
  .text.sd_ble_gap_device_name_get
-                0x000000000001e22c        0x4 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
+                0x000000000001e220        0x4 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
  .text.sd_ble_uuid_encode
-                0x000000000001e230        0x4 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
+                0x000000000001e224        0x4 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
  .text.uuid_list_sized_encode
-                0x000000000001e234       0xac Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
+                0x000000000001e228       0xac Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
  .text.uuid_list_encode
-                0x000000000001e2e0       0x38 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
+                0x000000000001e2d4       0x38 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
  .text.ble_advdata_encode
-                0x000000000001e318      0x394 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
-                0x000000000001e318                ble_advdata_encode
+                0x000000000001e30c      0x394 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
+                0x000000000001e30c                ble_advdata_encode
  .text.ble_advdata_search
-                0x000000000001e6ac       0x48 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
-                0x000000000001e6ac                ble_advdata_search
+                0x000000000001e6a0       0x48 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
+                0x000000000001e6a0                ble_advdata_search
  .text.ble_advdata_parse
-                0x000000000001e6f4       0x20 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
-                0x000000000001e6f4                ble_advdata_parse
+                0x000000000001e6e8       0x20 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
+                0x000000000001e6e8                ble_advdata_parse
  .text.sd_ble_gap_adv_set_configure
-                0x000000000001e714        0x4 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
+                0x000000000001e708        0x4 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
  .text.sd_ble_gap_adv_start
-                0x000000000001e718        0x4 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
+                0x000000000001e70c        0x4 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
  .text.sd_ble_gap_adv_stop
-                0x000000000001e71c        0x4 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
+                0x000000000001e710        0x4 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
  .text.flags_set
-                0x000000000001e720       0x2c Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
+                0x000000000001e714       0x2c Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
  .text.ble_advertising_conn_cfg_tag_set
-                0x000000000001e74c        0x6 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
-                0x000000000001e74c                ble_advertising_conn_cfg_tag_set
+                0x000000000001e740        0x6 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
+                0x000000000001e740                ble_advertising_conn_cfg_tag_set
  .text.ble_advertising_init
-                0x000000000001e752       0xe0 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
-                0x000000000001e752                ble_advertising_init
+                0x000000000001e746       0xe0 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
+                0x000000000001e746                ble_advertising_init
  .text.ble_advertising_start
-                0x000000000001e832      0x1fe Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
-                0x000000000001e832                ble_advertising_start
+                0x000000000001e826      0x1fe Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
+                0x000000000001e826                ble_advertising_start
  .text.ble_advertising_on_ble_evt
-                0x000000000001ea30       0x6a Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
-                0x000000000001ea30                ble_advertising_on_ble_evt
+                0x000000000001ea24       0x6a Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
+                0x000000000001ea24                ble_advertising_on_ble_evt
  .text.ble_advertising_restart_without_whitelist
-                0x000000000001ea9a       0x3c Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
-                0x000000000001ea9a                ble_advertising_restart_without_whitelist
+                0x000000000001ea8e       0x3c Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
+                0x000000000001ea8e                ble_advertising_restart_without_whitelist
  .text.ble_advertising_modes_config_set
-                0x000000000001ead6       0x18 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
-                0x000000000001ead6                ble_advertising_modes_config_set
+                0x000000000001eaca       0x18 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
+                0x000000000001eaca                ble_advertising_modes_config_set
  .text.sd_ble_gap_conn_param_update
-                0x000000000001eaee        0x4 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+                0x000000000001eae2        0x4 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
  .text.sd_ble_gap_disconnect
-                0x000000000001eaf2        0x4 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+                0x000000000001eae6        0x4 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
  .text.sd_ble_gap_ppcp_set
-                0x000000000001eaf6        0x4 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+                0x000000000001eaea        0x4 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
  .text.sd_ble_gap_ppcp_get
-                0x000000000001eafa        0x4 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
- *fill*         0x000000000001eafe        0x2 
+                0x000000000001eaee        0x4 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+ *fill*         0x000000000001eaf2        0x2 
  .text.instance_get
-                0x000000000001eb00       0x14 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+                0x000000000001eaf4       0x14 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
  .text.send_error_evt
-                0x000000000001eb14       0x10 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+                0x000000000001eb08       0x10 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
  .text.update_timeout_handler
-                0x000000000001eb24       0x70 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+                0x000000000001eb18       0x70 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
  .text.conn_params_negotiation
-                0x000000000001eb94       0x48 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+                0x000000000001eb88       0x48 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
  .text.is_conn_params_ok.constprop.0
-                0x000000000001ebdc       0x32 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
- *fill*         0x000000000001ec0e        0x2 
+                0x000000000001ebd0       0x32 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+ *fill*         0x000000000001ec02        0x2 
  .text.ble_evt_handler
-                0x000000000001ec10       0xe0 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+                0x000000000001ec04       0xe0 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
  .text.ble_conn_params_init
-                0x000000000001ecf0       0x74 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
-                0x000000000001ecf0                ble_conn_params_init
+                0x000000000001ece4       0x74 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+                0x000000000001ece4                ble_conn_params_init
  .text.for_each_set_flag
-                0x000000000001ed64       0x34 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+                0x000000000001ed58       0x34 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
  .text.flag_toggle
-                0x000000000001ed98        0xa Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+                0x000000000001ed8c        0xa Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
  .text.conn_handle_list_get
-                0x000000000001eda2       0x2e Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
-                0x000000000001eda2                conn_handle_list_get
+                0x000000000001ed96       0x2e Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+                0x000000000001ed96                conn_handle_list_get
  .text.ble_evt_handler
-                0x000000000001edd0       0xf4 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+                0x000000000001edc4       0xf4 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
  .text.ble_conn_state_valid
-                0x000000000001eec4       0x14 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
-                0x000000000001eec4                ble_conn_state_valid
+                0x000000000001eeb8       0x14 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+                0x000000000001eeb8                ble_conn_state_valid
  .text.ble_conn_state_role
-                0x000000000001eed8        0x4 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
-                0x000000000001eed8                ble_conn_state_role
+                0x000000000001eecc        0x4 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+                0x000000000001eecc                ble_conn_state_role
  .text.ble_conn_state_status
-                0x000000000001eedc       0x20 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
-                0x000000000001eedc                ble_conn_state_status
+                0x000000000001eed0       0x20 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+                0x000000000001eed0                ble_conn_state_status
  .text.ble_conn_state_encrypted
-                0x000000000001eefc       0x1c Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
-                0x000000000001eefc                ble_conn_state_encrypted
+                0x000000000001eef0       0x1c Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+                0x000000000001eef0                ble_conn_state_encrypted
  .text.ble_conn_state_mitm_protected
-                0x000000000001ef18       0x1c Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
-                0x000000000001ef18                ble_conn_state_mitm_protected
+                0x000000000001ef0c       0x1c Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+                0x000000000001ef0c                ble_conn_state_mitm_protected
  .text.ble_conn_state_lesc
-                0x000000000001ef34       0x1c Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
-                0x000000000001ef34                ble_conn_state_lesc
+                0x000000000001ef28       0x1c Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+                0x000000000001ef28                ble_conn_state_lesc
  .text.ble_conn_state_conn_idx
-                0x000000000001ef50       0x12 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
-                0x000000000001ef50                ble_conn_state_conn_idx
- *fill*         0x000000000001ef62        0x2 
+                0x000000000001ef44       0x12 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+                0x000000000001ef44                ble_conn_state_conn_idx
+ *fill*         0x000000000001ef56        0x2 
  .text.ble_conn_state_user_flag_get
-                0x000000000001ef64       0x30 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
-                0x000000000001ef64                ble_conn_state_user_flag_get
+                0x000000000001ef58       0x30 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+                0x000000000001ef58                ble_conn_state_user_flag_get
  .text.ble_conn_state_user_flag_set
-                0x000000000001ef94       0x34 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
-                0x000000000001ef94                ble_conn_state_user_flag_set
+                0x000000000001ef88       0x34 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+                0x000000000001ef88                ble_conn_state_user_flag_set
  .text.ble_conn_state_for_each_connected
-                0x000000000001efc8       0x14 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
-                0x000000000001efc8                ble_conn_state_for_each_connected
+                0x000000000001efbc       0x14 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+                0x000000000001efbc                ble_conn_state_for_each_connected
  .text.ble_conn_state_for_each_set_user_flag
-                0x000000000001efdc       0x30 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
-                0x000000000001efdc                ble_conn_state_for_each_set_user_flag
+                0x000000000001efd0       0x30 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+                0x000000000001efd0                ble_conn_state_for_each_set_user_flag
  .text.blcm_link_ctx_get
-                0x000000000001f00c       0x4e Output/Release/Obj/mouseware_nrf52810/ble_link_ctx_manager.o
-                0x000000000001f00c                blcm_link_ctx_get
+                0x000000000001f000       0x4e Output/Release/Obj/mouseware_nrf52810/ble_link_ctx_manager.o
+                0x000000000001f000                blcm_link_ctx_get
  .text.sd_ble_gatts_characteristic_add
-                0x000000000001f05a        0x4 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
+                0x000000000001f04e        0x4 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
  .text.set_security_req
-                0x000000000001f05e       0x2a Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
+                0x000000000001f052       0x2a Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
  .text.ble_srv_is_notification_enabled
-                0x000000000001f088        0x8 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
-                0x000000000001f088                ble_srv_is_notification_enabled
+                0x000000000001f07c        0x8 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
+                0x000000000001f07c                ble_srv_is_notification_enabled
  .text.ble_srv_is_indication_enabled
-                0x000000000001f090        0x8 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
-                0x000000000001f090                ble_srv_is_indication_enabled
+                0x000000000001f084        0x8 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
+                0x000000000001f084                ble_srv_is_indication_enabled
  .text.characteristic_add
-                0x000000000001f098      0x148 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
-                0x000000000001f098                characteristic_add
+                0x000000000001f08c      0x148 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
+                0x000000000001f08c                characteristic_add
  .text.sd_ble_gattc_exchange_mtu_request
-                0x000000000001f1e0        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
+                0x000000000001f1d4        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
  .text.sd_ble_gatts_exchange_mtu_reply
-                0x000000000001f1e4        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
+                0x000000000001f1d8        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
  .text.nrf_ble_gatt_init
-                0x000000000001f1e8       0x1e Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
-                0x000000000001f1e8                nrf_ble_gatt_init
+                0x000000000001f1dc       0x1e Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
+                0x000000000001f1dc                nrf_ble_gatt_init
  .text.nrf_ble_gatt_att_mtu_periph_set
-                0x000000000001f206       0x18 Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
-                0x000000000001f206                nrf_ble_gatt_att_mtu_periph_set
- *fill*         0x000000000001f21e        0x2 
+                0x000000000001f1fa       0x18 Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
+                0x000000000001f1fa                nrf_ble_gatt_att_mtu_periph_set
+ *fill*         0x000000000001f212        0x2 
  .text.nrf_ble_gatt_on_ble_evt
-                0x000000000001f220      0x14c Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
-                0x000000000001f220                nrf_ble_gatt_on_ble_evt
+                0x000000000001f214      0x14c Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
+                0x000000000001f214                nrf_ble_gatt_on_ble_evt
  .text.sd_ble_gatts_rw_authorize_reply
-                0x000000000001f36c        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
+                0x000000000001f360        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
  .text.sd_ble_user_mem_reply
-                0x000000000001f370        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
+                0x000000000001f364        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
  .text.user_mem_reply.part.0
-                0x000000000001f374       0x24 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
+                0x000000000001f368       0x24 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
  .text.nrf_ble_qwr_init
-                0x000000000001f398       0x24 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
-                0x000000000001f398                nrf_ble_qwr_init
+                0x000000000001f38c       0x24 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
+                0x000000000001f38c                nrf_ble_qwr_init
  .text.nrf_ble_qwr_conn_handle_assign
-                0x000000000001f3bc       0x16 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
-                0x000000000001f3bc                nrf_ble_qwr_conn_handle_assign
+                0x000000000001f3b0       0x16 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
+                0x000000000001f3b0                nrf_ble_qwr_conn_handle_assign
  .text.nrf_ble_qwr_on_ble_evt
-                0x000000000001f3d2       0xa6 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
-                0x000000000001f3d2                nrf_ble_qwr_on_ble_evt
+                0x000000000001f3c6       0xa6 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
+                0x000000000001f3c6                nrf_ble_qwr_on_ble_evt
  .text.sd_ble_gattc_char_value_by_uuid_read
-                0x000000000001f478        0x4 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x000000000001f46c        0x4 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
  .text.sd_ble_gattc_read
-                0x000000000001f47c        0x4 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x000000000001f470        0x4 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
  .text.sd_ble_gatts_value_get
-                0x000000000001f480        0x4 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x000000000001f474        0x4 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
  .text.sd_ble_gatts_initial_user_handle_get
-                0x000000000001f484        0x4 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x000000000001f478        0x4 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
  .text.sd_ble_gatts_attr_get
-                0x000000000001f488        0x4 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x000000000001f47c        0x4 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
  .text.evt_send
-                0x000000000001f48c       0x16 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x000000000001f480       0x16 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
  .text.send_unexpected_error
-                0x000000000001f4a2       0x28 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
- *fill*         0x000000000001f4ca        0x2 
+                0x000000000001f496       0x28 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+ *fill*         0x000000000001f4be        0x2 
  .text.local_db_apply_in_evt
-                0x000000000001f4cc       0xb4 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x000000000001f4c0       0xb4 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
  .text.apply_pending_handle
-                0x000000000001f580        0x4 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x000000000001f574        0x4 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
  .text.service_changed_pending_flags_check
-                0x000000000001f584       0x14 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x000000000001f578       0x14 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
  .text.sc_send_pending_handle
-                0x000000000001f598      0x140 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x000000000001f58c      0x140 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
  .text.car_update_needed
-                0x000000000001f6d8       0x2c Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x000000000001f6cc       0x2c Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
  .text.update_pending_flags_check
-                0x000000000001f704       0x34 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x000000000001f6f8       0x34 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
  .text.car_update_pending_handle
-                0x000000000001f738       0x3c Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x000000000001f72c       0x3c Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
  .text.db_update_pending_handle
-                0x000000000001f774       0xcc Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x000000000001f768       0xcc Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
  .text.gcm_im_evt_handler
-                0x000000000001f840       0x38 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
-                0x000000000001f840                gcm_im_evt_handler
+                0x000000000001f834       0x38 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x000000000001f834                gcm_im_evt_handler
  .text.gcm_pdb_evt_handler
-                0x000000000001f878       0x94 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
-                0x000000000001f878                gcm_pdb_evt_handler
+                0x000000000001f86c       0x94 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x000000000001f86c                gcm_pdb_evt_handler
  .text.store_car_value
-                0x000000000001f90c       0x70 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
-                0x000000000001f90c                store_car_value
+                0x000000000001f900       0x70 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x000000000001f900                store_car_value
  .text.gcm_ble_evt_handler
-                0x000000000001f97c      0x1ac Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
-                0x000000000001f97c                gcm_ble_evt_handler
+                0x000000000001f970      0x1ac Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x000000000001f970                gcm_ble_evt_handler
  .text.sd_ble_gatts_service_changed
-                0x000000000001fb28        0x4 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+                0x000000000001fb1c        0x4 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
  .text.sd_ble_gatts_sys_attr_set
-                0x000000000001fb2c        0x4 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+                0x000000000001fb20        0x4 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
  .text.sd_ble_gatts_sys_attr_get
-                0x000000000001fb30        0x4 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+                0x000000000001fb24        0x4 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
  .text.sd_ble_gatts_initial_user_handle_get
-                0x000000000001fb34        0x4 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+                0x000000000001fb28        0x4 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
  .text.evt_send
-                0x000000000001fb38       0x16 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
- *fill*         0x000000000001fb4e        0x2 
+                0x000000000001fb2c       0x16 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+ *fill*         0x000000000001fb42        0x2 
  .text.service_changed_pending_set
-                0x000000000001fb50       0x98 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+                0x000000000001fb44       0x98 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
  .text.gscm_pdb_evt_handler
-                0x000000000001fbe8       0x18 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
-                0x000000000001fbe8                gscm_pdb_evt_handler
+                0x000000000001fbdc       0x18 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+                0x000000000001fbdc                gscm_pdb_evt_handler
  .text.gscm_local_db_cache_update
-                0x000000000001fc00       0xb8 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
-                0x000000000001fc00                gscm_local_db_cache_update
+                0x000000000001fbf4       0xb8 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+                0x000000000001fbf4                gscm_local_db_cache_update
  .text.gscm_local_db_cache_apply
-                0x000000000001fcb8       0xa4 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
-                0x000000000001fcb8                gscm_local_db_cache_apply
+                0x000000000001fcac       0xa4 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+                0x000000000001fcac                gscm_local_db_cache_apply
  .text.gscm_service_changed_ind_needed
-                0x000000000001fd5c       0x24 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
-                0x000000000001fd5c                gscm_service_changed_ind_needed
+                0x000000000001fd50       0x24 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+                0x000000000001fd50                gscm_service_changed_ind_needed
  .text.gscm_service_changed_ind_send
-                0x000000000001fd80       0x58 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
-                0x000000000001fd80                gscm_service_changed_ind_send
+                0x000000000001fd74       0x58 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+                0x000000000001fd74                gscm_service_changed_ind_send
  .text.gscm_db_change_notification_done
-                0x000000000001fdd8       0x24 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
-                0x000000000001fdd8                gscm_db_change_notification_done
+                0x000000000001fdcc       0x24 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+                0x000000000001fdcc                gscm_db_change_notification_done
  .text.sd_ecb_block_encrypt
-                0x000000000001fdfc        0x4 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x000000000001fdf0        0x4 Output/Release/Obj/mouseware_nrf52810/id_manager.o
  .text.is_valid_irk
-                0x000000000001fe00       0x16 Output/Release/Obj/mouseware_nrf52810/id_manager.o
-                0x000000000001fe00                is_valid_irk
+                0x000000000001fdf4       0x16 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x000000000001fdf4                is_valid_irk
  .text.addr_compare
-                0x000000000001fe16       0x28 Output/Release/Obj/mouseware_nrf52810/id_manager.o
-                0x000000000001fe16                addr_compare
+                0x000000000001fe0a       0x28 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x000000000001fe0a                addr_compare
  .text.im_is_duplicate_bonding_data
-                0x000000000001fe3e       0x5e Output/Release/Obj/mouseware_nrf52810/id_manager.o
-                0x000000000001fe3e                im_is_duplicate_bonding_data
+                0x000000000001fe32       0x5e Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x000000000001fe32                im_is_duplicate_bonding_data
  .text.im_find_duplicate_bonding_data
-                0x000000000001fe9c       0x38 Output/Release/Obj/mouseware_nrf52810/id_manager.o
-                0x000000000001fe9c                im_find_duplicate_bonding_data
+                0x000000000001fe90       0x38 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x000000000001fe90                im_find_duplicate_bonding_data
  .text.im_peer_id_get_by_conn_handle
-                0x000000000001fed4       0x24 Output/Release/Obj/mouseware_nrf52810/id_manager.o
-                0x000000000001fed4                im_peer_id_get_by_conn_handle
+                0x000000000001fec8       0x24 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x000000000001fec8                im_peer_id_get_by_conn_handle
  .text.im_ble_addr_get
-                0x000000000001fef8       0x38 Output/Release/Obj/mouseware_nrf52810/id_manager.o
-                0x000000000001fef8                im_ble_addr_get
+                0x000000000001feec       0x38 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x000000000001feec                im_ble_addr_get
  .text.im_conn_handle_get
-                0x000000000001ff30       0x44 Output/Release/Obj/mouseware_nrf52810/id_manager.o
-                0x000000000001ff30                im_conn_handle_get
+                0x000000000001ff24       0x44 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x000000000001ff24                im_conn_handle_get
  .text.im_master_id_is_valid
-                0x000000000001ff74       0x1a Output/Release/Obj/mouseware_nrf52810/id_manager.o
-                0x000000000001ff74                im_master_id_is_valid
+                0x000000000001ff68       0x1a Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x000000000001ff68                im_master_id_is_valid
  .text.im_master_ids_compare
-                0x000000000001ff8e       0x28 Output/Release/Obj/mouseware_nrf52810/id_manager.o
-                0x000000000001ff8e                im_master_ids_compare
+                0x000000000001ff82       0x28 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x000000000001ff82                im_master_ids_compare
  .text.im_peer_id_get_by_master_id
-                0x000000000001ffb6       0x42 Output/Release/Obj/mouseware_nrf52810/id_manager.o
-                0x000000000001ffb6                im_peer_id_get_by_master_id
+                0x000000000001ffaa       0x42 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x000000000001ffaa                im_peer_id_get_by_master_id
  .text.im_new_peer_id
-                0x000000000001fff8       0x14 Output/Release/Obj/mouseware_nrf52810/id_manager.o
-                0x000000000001fff8                im_new_peer_id
+                0x000000000001ffec       0x14 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x000000000001ffec                im_new_peer_id
  .text.im_peer_free
-                0x000000000002000c       0x28 Output/Release/Obj/mouseware_nrf52810/id_manager.o
-                0x000000000002000c                im_peer_free
- .text.ah       0x0000000000020034       0x54 Output/Release/Obj/mouseware_nrf52810/id_manager.o
-                0x0000000000020034                ah
+                0x0000000000020000       0x28 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x0000000000020000                im_peer_free
+ .text.ah       0x0000000000020028       0x54 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x0000000000020028                ah
  .text.im_address_resolve
-                0x0000000000020088       0x4c Output/Release/Obj/mouseware_nrf52810/id_manager.o
-                0x0000000000020088                im_address_resolve
+                0x000000000002007c       0x4c Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x000000000002007c                im_address_resolve
  .text.im_ble_evt_handler
-                0x00000000000200d4       0xd0 Output/Release/Obj/mouseware_nrf52810/id_manager.o
-                0x00000000000200d4                im_ble_evt_handler
+                0x00000000000200c8       0xd0 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x00000000000200c8                im_ble_evt_handler
  .text.peer_data_id_is_valid
-                0x00000000000201a4       0x10 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+                0x0000000000020198       0x10 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
  .text.pds_evt_send
-                0x00000000000201b4        0xa Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
- *fill*         0x00000000000201be        0x2 
+                0x00000000000201a8        0xa Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+ *fill*         0x00000000000201b2        0x2 
  .text.peer_data_delete_process
-                0x00000000000201c0       0xb0 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+                0x00000000000201b4       0xb0 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
  .text.peer_data_find
-                0x0000000000020270       0x26 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+                0x0000000000020264       0x26 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
  .text.pds_peer_data_read
-                0x0000000000020296       0x6c Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
-                0x0000000000020296                pds_peer_data_read
- *fill*         0x0000000000020302        0x2 
+                0x000000000002028a       0x6c Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+                0x000000000002028a                pds_peer_data_read
+ *fill*         0x00000000000202f6        0x2 
  .text.pds_peer_data_iterate_prepare
-                0x0000000000020304       0x10 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
-                0x0000000000020304                pds_peer_data_iterate_prepare
+                0x00000000000202f8       0x10 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+                0x00000000000202f8                pds_peer_data_iterate_prepare
  .text.pds_peer_data_iterate
-                0x0000000000020314       0x5c Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
-                0x0000000000020314                pds_peer_data_iterate
+                0x0000000000020308       0x5c Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+                0x0000000000020308                pds_peer_data_iterate
  .text.pds_peer_data_store
-                0x0000000000020370       0xb8 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
-                0x0000000000020370                pds_peer_data_store
+                0x0000000000020364       0xb8 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+                0x0000000000020364                pds_peer_data_store
  .text.pds_peer_id_allocate
-                0x0000000000020428        0x8 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
-                0x0000000000020428                pds_peer_id_allocate
+                0x000000000002041c        0x8 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+                0x000000000002041c                pds_peer_id_allocate
  .text.pds_peer_id_free
-                0x0000000000020430       0x16 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
-                0x0000000000020430                pds_peer_id_free
+                0x0000000000020424       0x16 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+                0x0000000000020424                pds_peer_id_free
  .text.pds_peer_id_is_allocated
-                0x0000000000020446        0x4 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
-                0x0000000000020446                pds_peer_id_is_allocated
+                0x000000000002043a        0x4 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+                0x000000000002043a                pds_peer_id_is_allocated
  .text.pds_next_peer_id_get
-                0x000000000002044a        0x4 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
-                0x000000000002044a                pds_next_peer_id_get
+                0x000000000002043e        0x4 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+                0x000000000002043e                pds_next_peer_id_get
  .text.pds_next_deleted_peer_id_get
-                0x000000000002044e        0x4 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
-                0x000000000002044e                pds_next_deleted_peer_id_get
- *fill*         0x0000000000020452        0x2 
+                0x0000000000020442        0x4 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+                0x0000000000020442                pds_next_deleted_peer_id_get
+ *fill*         0x0000000000020446        0x2 
  .text.write_buffer_record_find_next
-                0x0000000000020454       0x28 Output/Release/Obj/mouseware_nrf52810/peer_database.o
+                0x0000000000020448       0x28 Output/Release/Obj/mouseware_nrf52810/peer_database.o
  .text.write_buffer_record_find
-                0x000000000002047c       0x32 Output/Release/Obj/mouseware_nrf52810/peer_database.o
+                0x0000000000020470       0x32 Output/Release/Obj/mouseware_nrf52810/peer_database.o
  .text.pdb_evt_send
-                0x00000000000204ae       0x1e Output/Release/Obj/mouseware_nrf52810/peer_database.o
+                0x00000000000204a2       0x1e Output/Release/Obj/mouseware_nrf52810/peer_database.o
  .text.write_buffer_record_release
-                0x00000000000204cc       0x40 Output/Release/Obj/mouseware_nrf52810/peer_database.o
+                0x00000000000204c0       0x40 Output/Release/Obj/mouseware_nrf52810/peer_database.o
  .text.write_buf_store
-                0x000000000002050c       0xf4 Output/Release/Obj/mouseware_nrf52810/peer_database.o
-                0x000000000002050c                write_buf_store
+                0x0000000000020500       0xf4 Output/Release/Obj/mouseware_nrf52810/peer_database.o
+                0x0000000000020500                write_buf_store
  .text.pdb_pds_evt_handler
-                0x0000000000020600      0x114 Output/Release/Obj/mouseware_nrf52810/peer_database.o
-                0x0000000000020600                pdb_pds_evt_handler
+                0x00000000000205f4      0x114 Output/Release/Obj/mouseware_nrf52810/peer_database.o
+                0x00000000000205f4                pdb_pds_evt_handler
  .text.pdb_peer_data_ptr_get
-                0x0000000000020714        0x6 Output/Release/Obj/mouseware_nrf52810/peer_database.o
-                0x0000000000020714                pdb_peer_data_ptr_get
- *fill*         0x000000000002071a        0x2 
+                0x0000000000020708        0x6 Output/Release/Obj/mouseware_nrf52810/peer_database.o
+                0x0000000000020708                pdb_peer_data_ptr_get
+ *fill*         0x000000000002070e        0x2 
  .text.pdb_write_buf_get
-                0x000000000002071c       0xe4 Output/Release/Obj/mouseware_nrf52810/peer_database.o
-                0x000000000002071c                pdb_write_buf_get
+                0x0000000000020710       0xe4 Output/Release/Obj/mouseware_nrf52810/peer_database.o
+                0x0000000000020710                pdb_write_buf_get
  .text.pdb_write_buf_release
-                0x0000000000020800       0x14 Output/Release/Obj/mouseware_nrf52810/peer_database.o
-                0x0000000000020800                pdb_write_buf_release
+                0x00000000000207f4       0x14 Output/Release/Obj/mouseware_nrf52810/peer_database.o
+                0x00000000000207f4                pdb_write_buf_release
  .text.pdb_peer_free
-                0x0000000000020814       0x90 Output/Release/Obj/mouseware_nrf52810/peer_database.o
-                0x0000000000020814                pdb_peer_free
+                0x0000000000020808       0x90 Output/Release/Obj/mouseware_nrf52810/peer_database.o
+                0x0000000000020808                pdb_peer_free
  .text.pdb_write_buf_store
-                0x00000000000208a4       0x36 Output/Release/Obj/mouseware_nrf52810/peer_database.o
-                0x00000000000208a4                pdb_write_buf_store
- .text.claim    0x00000000000208da       0x36 Output/Release/Obj/mouseware_nrf52810/peer_id.o
+                0x0000000000020898       0x36 Output/Release/Obj/mouseware_nrf52810/peer_database.o
+                0x0000000000020898                pdb_write_buf_store
+ .text.claim    0x00000000000208ce       0x36 Output/Release/Obj/mouseware_nrf52810/peer_id.o
  .text.peer_id_allocate
-                0x0000000000020910        0xc Output/Release/Obj/mouseware_nrf52810/peer_id.o
-                0x0000000000020910                peer_id_allocate
+                0x0000000000020904        0xc Output/Release/Obj/mouseware_nrf52810/peer_id.o
+                0x0000000000020904                peer_id_allocate
  .text.peer_id_delete
-                0x000000000002091c       0x24 Output/Release/Obj/mouseware_nrf52810/peer_id.o
-                0x000000000002091c                peer_id_delete
+                0x0000000000020910       0x24 Output/Release/Obj/mouseware_nrf52810/peer_id.o
+                0x0000000000020910                peer_id_delete
  .text.peer_id_free
-                0x0000000000020940       0x28 Output/Release/Obj/mouseware_nrf52810/peer_id.o
-                0x0000000000020940                peer_id_free
+                0x0000000000020934       0x28 Output/Release/Obj/mouseware_nrf52810/peer_id.o
+                0x0000000000020934                peer_id_free
  .text.peer_id_is_allocated
-                0x0000000000020968       0x14 Output/Release/Obj/mouseware_nrf52810/peer_id.o
-                0x0000000000020968                peer_id_is_allocated
+                0x000000000002095c       0x14 Output/Release/Obj/mouseware_nrf52810/peer_id.o
+                0x000000000002095c                peer_id_is_allocated
  .text.peer_id_is_deleted
-                0x000000000002097c       0x14 Output/Release/Obj/mouseware_nrf52810/peer_id.o
-                0x000000000002097c                peer_id_is_deleted
+                0x0000000000020970       0x14 Output/Release/Obj/mouseware_nrf52810/peer_id.o
+                0x0000000000020970                peer_id_is_deleted
  .text.next_id_get
-                0x0000000000020990       0x32 Output/Release/Obj/mouseware_nrf52810/peer_id.o
-                0x0000000000020990                next_id_get
- *fill*         0x00000000000209c2        0x2 
+                0x0000000000020984       0x32 Output/Release/Obj/mouseware_nrf52810/peer_id.o
+                0x0000000000020984                next_id_get
+ *fill*         0x00000000000209b6        0x2 
  .text.peer_id_get_next_used
-                0x00000000000209c4       0x34 Output/Release/Obj/mouseware_nrf52810/peer_id.o
-                0x00000000000209c4                peer_id_get_next_used
+                0x00000000000209b8       0x34 Output/Release/Obj/mouseware_nrf52810/peer_id.o
+                0x00000000000209b8                peer_id_get_next_used
  .text.peer_id_get_next_deleted
-                0x00000000000209f8        0xc Output/Release/Obj/mouseware_nrf52810/peer_id.o
-                0x00000000000209f8                peer_id_get_next_deleted
+                0x00000000000209ec        0xc Output/Release/Obj/mouseware_nrf52810/peer_id.o
+                0x00000000000209ec                peer_id_get_next_deleted
  .text.evt_send
-                0x0000000000020a04       0x28 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
+                0x00000000000209f8       0x28 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
  .text.ble_evt_handler
-                0x0000000000020a2c       0x24 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
+                0x0000000000020a20       0x24 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
  .text.pm_sm_evt_handler
-                0x0000000000020a50        0x8 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
-                0x0000000000020a50                pm_sm_evt_handler
+                0x0000000000020a44        0x8 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
+                0x0000000000020a44                pm_sm_evt_handler
  .text.pm_gcm_evt_handler
-                0x0000000000020a58        0x4 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
-                0x0000000000020a58                pm_gcm_evt_handler
+                0x0000000000020a4c        0x4 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
+                0x0000000000020a4c                pm_gcm_evt_handler
  .text.pm_gscm_evt_handler
-                0x0000000000020a5c        0x4 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
-                0x0000000000020a5c                pm_gscm_evt_handler
+                0x0000000000020a50        0x4 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
+                0x0000000000020a50                pm_gscm_evt_handler
  .text.pm_im_evt_handler
-                0x0000000000020a60        0x4 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
-                0x0000000000020a60                pm_im_evt_handler
+                0x0000000000020a54        0x4 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
+                0x0000000000020a54                pm_im_evt_handler
  .text.pm_peer_ranks_get
-                0x0000000000020a64       0xec Output/Release/Obj/mouseware_nrf52810/peer_manager.o
-                0x0000000000020a64                pm_peer_ranks_get
+                0x0000000000020a58       0xec Output/Release/Obj/mouseware_nrf52810/peer_manager.o
+                0x0000000000020a58                pm_peer_ranks_get
  .text.rank_vars_update
-                0x0000000000020b50       0x40 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
+                0x0000000000020b44       0x40 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
  .text.pm_pdb_evt_handler
-                0x0000000000020b90      0x13c Output/Release/Obj/mouseware_nrf52810/peer_manager.o
-                0x0000000000020b90                pm_pdb_evt_handler
+                0x0000000000020b84      0x13c Output/Release/Obj/mouseware_nrf52810/peer_manager.o
+                0x0000000000020b84                pm_pdb_evt_handler
  .text.pm_buffer_ptr_get
-                0x0000000000020ccc       0x32 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
-                0x0000000000020ccc                pm_buffer_ptr_get
+                0x0000000000020cc0       0x32 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
+                0x0000000000020cc0                pm_buffer_ptr_get
  .text.pm_buffer_release
-                0x0000000000020cfe       0x30 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
-                0x0000000000020cfe                pm_buffer_release
+                0x0000000000020cf2       0x30 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
+                0x0000000000020cf2                pm_buffer_release
  .text.pm_buffer_block_acquire
-                0x0000000000020d2e       0x64 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
-                0x0000000000020d2e                pm_buffer_block_acquire
+                0x0000000000020d22       0x64 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
+                0x0000000000020d22                pm_buffer_block_acquire
  .text.sd_ble_gap_authenticate
-                0x0000000000020d92        0x4 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+                0x0000000000020d86        0x4 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
  .text.sd_ble_gap_sec_params_reply
-                0x0000000000020d96        0x4 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+                0x0000000000020d8a        0x4 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
  .text.sd_ble_gap_sec_info_reply
-                0x0000000000020d9a        0x4 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+                0x0000000000020d8e        0x4 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
  .text.evt_send
-                0x0000000000020d9e       0x16 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+                0x0000000000020d92       0x16 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
  .text.send_config_req
-                0x0000000000020db4       0x26 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+                0x0000000000020da8       0x26 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
  .text.send_unexpected_error
-                0x0000000000020dda       0x28 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
- *fill*         0x0000000000020e02        0x2 
+                0x0000000000020dce       0x28 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+ *fill*         0x0000000000020df6        0x2 
  .text.conn_sec_failure
-                0x0000000000020e04       0x48 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+                0x0000000000020df8       0x48 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
  .text.pairing_success_evt_send
-                0x0000000000020e4c       0x2e Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
- *fill*         0x0000000000020e7a        0x2 
+                0x0000000000020e40       0x2e Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+ *fill*         0x0000000000020e6e        0x2 
  .text.sec_proc_start.constprop.0
-                0x0000000000020e7c       0x60 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+                0x0000000000020e70       0x60 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
  .text.link_secure_failure
-                0x0000000000020edc       0xa8 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+                0x0000000000020ed0       0xa8 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
  .text.smd_params_reply
-                0x0000000000020f84      0x144 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
-                0x0000000000020f84                smd_params_reply
+                0x0000000000020f78      0x144 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+                0x0000000000020f78                smd_params_reply
  .text.smd_link_secure
-                0x00000000000210c8       0x2a Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
-                0x00000000000210c8                smd_link_secure
- *fill*         0x00000000000210f2        0x2 
+                0x00000000000210bc       0x2a Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+                0x00000000000210bc                smd_link_secure
+ *fill*         0x00000000000210e6        0x2 
  .text.smd_ble_evt_handler
-                0x00000000000210f4      0x358 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
-                0x00000000000210f4                smd_ble_evt_handler
- .text.new_evt  0x000000000002144c       0x20 Output/Release/Obj/mouseware_nrf52810/security_manager.o
+                0x00000000000210e8      0x358 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+                0x00000000000210e8                smd_ble_evt_handler
+ .text.new_evt  0x0000000000021440       0x20 Output/Release/Obj/mouseware_nrf52810/security_manager.o
  .text.evt_send
-                0x000000000002146c        0x4 Output/Release/Obj/mouseware_nrf52810/security_manager.o
+                0x0000000000021460        0x4 Output/Release/Obj/mouseware_nrf52810/security_manager.o
  .text.events_send_from_err_code
-                0x0000000000021470       0x9c Output/Release/Obj/mouseware_nrf52810/security_manager.o
+                0x0000000000021464       0x9c Output/Release/Obj/mouseware_nrf52810/security_manager.o
  .text.smd_params_reply_perform
-                0x000000000002150c       0x84 Output/Release/Obj/mouseware_nrf52810/security_manager.o
+                0x0000000000021500       0x84 Output/Release/Obj/mouseware_nrf52810/security_manager.o
  .text.params_reply_pending_handle
-                0x0000000000021590        0x6 Output/Release/Obj/mouseware_nrf52810/security_manager.o
- *fill*         0x0000000000021596        0x2 
+                0x0000000000021584        0x6 Output/Release/Obj/mouseware_nrf52810/security_manager.o
+ *fill*         0x000000000002158a        0x2 
  .text.link_secure
-                0x0000000000021598      0x130 Output/Release/Obj/mouseware_nrf52810/security_manager.o
+                0x000000000002158c      0x130 Output/Release/Obj/mouseware_nrf52810/security_manager.o
  .text.link_secure_pending_handle
-                0x00000000000216c8       0x30 Output/Release/Obj/mouseware_nrf52810/security_manager.o
+                0x00000000000216bc       0x30 Output/Release/Obj/mouseware_nrf52810/security_manager.o
  .text.sm_conn_sec_status_get
-                0x00000000000216f8       0xa0 Output/Release/Obj/mouseware_nrf52810/security_manager.o
-                0x00000000000216f8                sm_conn_sec_status_get
+                0x00000000000216ec       0xa0 Output/Release/Obj/mouseware_nrf52810/security_manager.o
+                0x00000000000216ec                sm_conn_sec_status_get
  .text.sm_sec_is_sufficient
-                0x0000000000021798       0x28 Output/Release/Obj/mouseware_nrf52810/security_manager.o
-                0x0000000000021798                sm_sec_is_sufficient
+                0x000000000002178c       0x28 Output/Release/Obj/mouseware_nrf52810/security_manager.o
+                0x000000000002178c                sm_sec_is_sufficient
  .text.sm_smd_evt_handler
-                0x00000000000217c0       0x7c Output/Release/Obj/mouseware_nrf52810/security_manager.o
-                0x00000000000217c0                sm_smd_evt_handler
+                0x00000000000217b4       0x7c Output/Release/Obj/mouseware_nrf52810/security_manager.o
+                0x00000000000217b4                sm_smd_evt_handler
  .text.sm_pdb_evt_handler
-                0x000000000002183c       0x40 Output/Release/Obj/mouseware_nrf52810/security_manager.o
-                0x000000000002183c                sm_pdb_evt_handler
+                0x0000000000021830       0x40 Output/Release/Obj/mouseware_nrf52810/security_manager.o
+                0x0000000000021830                sm_pdb_evt_handler
  .text.sm_ble_evt_handler
-                0x000000000002187c       0x34 Output/Release/Obj/mouseware_nrf52810/security_manager.o
-                0x000000000002187c                sm_ble_evt_handler
+                0x0000000000021870       0x34 Output/Release/Obj/mouseware_nrf52810/security_manager.o
+                0x0000000000021870                sm_ble_evt_handler
  .text.sd_ble_gatts_service_add
+                0x00000000000218a4        0x4 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
+ .text.sd_ble_gatts_value_get
+                0x00000000000218a8        0x4 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
+ .text.sd_ble_gatts_hvx
+                0x00000000000218ac        0x4 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
+ .text.sd_ble_uuid_vs_add
                 0x00000000000218b0        0x4 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
- .text.sd_ble_gatts_value_get
-                0x00000000000218b4        0x4 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
- .text.sd_ble_gatts_hvx
-                0x00000000000218b8        0x4 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
- .text.sd_ble_uuid_vs_add
-                0x00000000000218bc        0x4 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
  .text.ble_nus_on_ble_evt
-                0x00000000000218c0      0x130 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
-                0x00000000000218c0                ble_nus_on_ble_evt
+                0x00000000000218b4      0x130 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
+                0x00000000000218b4                ble_nus_on_ble_evt
  .text.ble_nus_init
-                0x00000000000219f0       0xf4 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
-                0x00000000000219f0                ble_nus_init
+                0x00000000000219e4       0xf4 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
+                0x00000000000219e4                ble_nus_init
  .text.ble_nus_data_send
-                0x0000000000021ae4       0x64 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
-                0x0000000000021ae4                ble_nus_data_send
+                0x0000000000021ad8       0x64 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
+                0x0000000000021ad8                ble_nus_data_send
  .text.sd_softdevice_enable
-                0x0000000000021b48        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+                0x0000000000021b3c        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
  .text.sd_softdevice_disable
-                0x0000000000021b4c        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+                0x0000000000021b40        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
  .text.sdh_request_observer_notify
-                0x0000000000021b50       0x30 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+                0x0000000000021b44       0x30 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
  .text.sdh_state_observer_notify
-                0x0000000000021b80       0x28 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+                0x0000000000021b74       0x28 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
  .text.softdevice_evt_irq_disable
-                0x0000000000021ba8       0x2c Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+                0x0000000000021b9c       0x2c Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
  .text.softdevices_evt_irq_enable
-                0x0000000000021bd4       0x38 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+                0x0000000000021bc8       0x38 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
  .text.nrf_sdh_enable_request
-                0x0000000000021c0c       0x7c Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
-                0x0000000000021c0c                nrf_sdh_enable_request
+                0x0000000000021c00       0x7c Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+                0x0000000000021c00                nrf_sdh_enable_request
  .text.nrf_sdh_disable_request
-                0x0000000000021c88       0x60 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
-                0x0000000000021c88                nrf_sdh_disable_request
+                0x0000000000021c7c       0x60 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+                0x0000000000021c7c                nrf_sdh_disable_request
  .text.nrf_sdh_request_continue
-                0x0000000000021ce8       0x20 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
-                0x0000000000021ce8                nrf_sdh_request_continue
+                0x0000000000021cdc       0x20 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+                0x0000000000021cdc                nrf_sdh_request_continue
  .text.nrf_sdh_is_enabled
-                0x0000000000021d08        0xc Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
-                0x0000000000021d08                nrf_sdh_is_enabled
+                0x0000000000021cfc        0xc Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+                0x0000000000021cfc                nrf_sdh_is_enabled
  .text.nrf_sdh_evts_poll
-                0x0000000000021d14       0x28 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
-                0x0000000000021d14                nrf_sdh_evts_poll
+                0x0000000000021d08       0x28 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+                0x0000000000021d08                nrf_sdh_evts_poll
  .text.SWI2_IRQHandler
-                0x0000000000021d3c        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
-                0x0000000000021d3c                SWI2_IRQHandler
+                0x0000000000021d30        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+                0x0000000000021d30                SWI2_IRQHandler
  .text.sd_ble_enable
-                0x0000000000021d40        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
+                0x0000000000021d34        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
  .text.sd_ble_cfg_set
-                0x0000000000021d44        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
+                0x0000000000021d38        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
  .text.sd_ble_evt_get
-                0x0000000000021d48        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
+                0x0000000000021d3c        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
  .text.nrf_sdh_ble_evts_poll.part.0
-                0x0000000000021d4c       0x54 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
+                0x0000000000021d40       0x54 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
  .text.nrf_sdh_ble_evts_poll
-                0x0000000000021da0       0x10 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
+                0x0000000000021d94       0x10 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
  .text.nrf_sdh_ble_default_cfg_set
-                0x0000000000021db0      0x180 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
-                0x0000000000021db0                nrf_sdh_ble_default_cfg_set
+                0x0000000000021da4      0x180 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
+                0x0000000000021da4                nrf_sdh_ble_default_cfg_set
  .text.nrf_sdh_ble_enable
-                0x0000000000021f30       0x94 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
-                0x0000000000021f30                nrf_sdh_ble_enable
+                0x0000000000021f24       0x94 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
+                0x0000000000021f24                nrf_sdh_ble_enable
  .text.sd_evt_get
-                0x0000000000021fc4        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
+                0x0000000000021fb8        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
  .text.nrf_sdh_soc_evts_poll
-                0x0000000000021fc8       0x40 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
+                0x0000000000021fbc       0x40 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
  .text.svci_nrf_dfu_set_adv_name_svci_async_init
-                0x0000000000022008        0x8 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
+                0x0000000000021ffc        0x8 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
  .text.ble_dfu_buttonless_on_sys_evt
-                0x0000000000022010       0x5c Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
-                0x0000000000022010                ble_dfu_buttonless_on_sys_evt
+                0x0000000000022004       0x5c Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
+                0x0000000000022004                ble_dfu_buttonless_on_sys_evt
  .text.ble_dfu_buttonless_backend_init
-                0x000000000002206c       0x14 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
-                0x000000000002206c                ble_dfu_buttonless_backend_init
+                0x0000000000022060       0x14 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
+                0x0000000000022060                ble_dfu_buttonless_backend_init
  .text.ble_dfu_buttonless_async_svci_init
-                0x0000000000022080       0x20 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
-                0x0000000000022080                ble_dfu_buttonless_async_svci_init
+                0x0000000000022074       0x20 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
+                0x0000000000022074                ble_dfu_buttonless_async_svci_init
  .text.ble_dfu_buttonless_char_add
-                0x00000000000220a0       0x40 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
-                0x00000000000220a0                ble_dfu_buttonless_char_add
+                0x0000000000022094       0x40 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
+                0x0000000000022094                ble_dfu_buttonless_char_add
  .text.ble_dfu_buttonless_on_ctrl_pt_write
-                0x00000000000220e0       0xc8 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
-                0x00000000000220e0                ble_dfu_buttonless_on_ctrl_pt_write
+                0x00000000000220d4       0xc8 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
+                0x00000000000220d4                ble_dfu_buttonless_on_ctrl_pt_write
  .text.ble_dfu_buttonless_bootloader_start_prepare
-                0x00000000000221a8       0x18 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
-                0x00000000000221a8                ble_dfu_buttonless_bootloader_start_prepare
+                0x000000000002219c       0x18 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
+                0x000000000002219c                ble_dfu_buttonless_bootloader_start_prepare
  .text.sd_ble_gatts_service_add
-                0x00000000000221c0        0x4 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+                0x00000000000221b4        0x4 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
  .text.sd_ble_gatts_value_get
-                0x00000000000221c4        0x4 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+                0x00000000000221b8        0x4 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
  .text.sd_ble_gatts_hvx
-                0x00000000000221c8        0x4 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+                0x00000000000221bc        0x4 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
  .text.sd_ble_gatts_rw_authorize_reply
-                0x00000000000221cc        0x4 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+                0x00000000000221c0        0x4 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
  .text.sd_ble_uuid_vs_add
-                0x00000000000221d0        0x4 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+                0x00000000000221c4        0x4 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
  .text.sd_power_gpregret_set
-                0x00000000000221d4        0x4 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+                0x00000000000221c8        0x4 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
  .text.sd_power_gpregret_clr
-                0x00000000000221d8        0x4 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+                0x00000000000221cc        0x4 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
  .text.dummy_evt_handler
-                0x00000000000221dc        0x2 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
- *fill*         0x00000000000221de        0x2 
+                0x00000000000221d0        0x2 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+ *fill*         0x00000000000221d2        0x2 
  .text.ble_dfu_buttonless_on_ble_evt
-                0x00000000000221e0       0xec Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
-                0x00000000000221e0                ble_dfu_buttonless_on_ble_evt
+                0x00000000000221d4       0xec Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+                0x00000000000221d4                ble_dfu_buttonless_on_ble_evt
  .text.ble_dfu_buttonless_resp_send
-                0x00000000000222cc       0x54 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
-                0x00000000000222cc                ble_dfu_buttonless_resp_send
+                0x00000000000222c0       0x54 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+                0x00000000000222c0                ble_dfu_buttonless_resp_send
  .text.ble_dfu_buttonless_bootloader_start_finalize
-                0x0000000000022320       0x30 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
-                0x0000000000022320                ble_dfu_buttonless_bootloader_start_finalize
+                0x0000000000022314       0x30 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+                0x0000000000022314                ble_dfu_buttonless_bootloader_start_finalize
  .text.ble_dfu_buttonless_init
-                0x0000000000022350       0x80 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
-                0x0000000000022350                ble_dfu_buttonless_init
+                0x0000000000022344       0x80 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+                0x0000000000022344                ble_dfu_buttonless_init
  .text.sd_softdevice_vector_table_base_set
-                0x00000000000223d0        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
+                0x00000000000223c4        0x4 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
  .text.nrf_dfu_svci_vector_table_set
-                0x00000000000223d4       0x68 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
-                0x00000000000223d4                nrf_dfu_svci_vector_table_set
+                0x00000000000223c8       0x68 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
+                0x00000000000223c8                nrf_dfu_svci_vector_table_set
  .text.nrf_dfu_svci_vector_table_unset
-                0x000000000002243c       0x44 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
-                0x000000000002243c                nrf_dfu_svci_vector_table_unset
+                0x0000000000022430       0x44 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
+                0x0000000000022430                nrf_dfu_svci_vector_table_unset
  .text.libc.__int64_udivmod
-                0x0000000000022480       0xce C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
-                0x0000000000022480                __aeabi_uldivmod
-                0x0000000000022480                __int64_udiv
-                0x0000000000022480                __udivdi3
-                0x0000000000022480                __int64_udivmod
- *fill*         0x000000000002254e        0x2 
+                0x0000000000022474       0xce C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc_asm.o)
+                0x0000000000022474                __aeabi_uldivmod
+                0x0000000000022474                __int64_udiv
+                0x0000000000022474                __udivdi3
+                0x0000000000022474                __int64_udivmod
+ *fill*         0x0000000000022542        0x2 
  .text.libc.__RAL_ascii_isctype
-                0x0000000000022550       0x1c C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
+                0x0000000000022544       0x1c C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
  .text.libc.__RAL_ascii_toupper
-                0x000000000002256c        0xc C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
+                0x0000000000022560        0xc C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
  .text.libc.__RAL_ascii_tolower
-                0x0000000000022578        0xc C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
+                0x000000000002256c        0xc C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
  .text.libc.__RAL_ascii_iswctype
-                0x0000000000022584       0x1c C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
+                0x0000000000022578       0x1c C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
  .text.libc.__RAL_ascii_towupper
-                0x00000000000225a0        0xc C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
+                0x0000000000022594        0xc C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
  .text.libc.__RAL_ascii_towlower
-                0x00000000000225ac        0xc C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
+                0x00000000000225a0        0xc C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
  .text.libc.__RAL_ascii_wctomb
-                0x00000000000225b8        0xe C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
-                0x00000000000225b8                __RAL_ascii_wctomb
+                0x00000000000225ac        0xe C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
+                0x00000000000225ac                __RAL_ascii_wctomb
  .text.libc.__RAL_ascii_mbtowc
-                0x00000000000225c6       0x24 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
-                0x00000000000225c6                __RAL_ascii_mbtowc
+                0x00000000000225ba       0x24 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
+                0x00000000000225ba                __RAL_ascii_mbtowc
  .text.libc.__putc
-                0x00000000000225ea       0x36 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
-                0x00000000000225ea                __putc
+                0x00000000000225de       0x36 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
+                0x00000000000225de                __putc
  .text.libc.__RAL_print_padding
-                0x0000000000022620       0x1c C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
-                0x0000000000022620                __RAL_print_padding
+                0x0000000000022614       0x1c C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
+                0x0000000000022614                __RAL_print_padding
  .text.libc.__RAL_pre_padding
-                0x000000000002263c       0x1a C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
-                0x000000000002263c                __RAL_pre_padding
- *fill*         0x0000000000022656        0x2 
+                0x0000000000022630       0x1a C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
+                0x0000000000022630                __RAL_pre_padding
+ *fill*         0x000000000002264a        0x2 
  .text.libc.__RAL_isctype
-                0x0000000000022658       0x14 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
-                0x0000000000022658                __RAL_isctype
+                0x000000000002264c       0x14 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
+                0x000000000002264c                __RAL_isctype
  .text.libc.isprint
-                0x000000000002266c        0xa C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
-                0x000000000002266c                isprint
+                0x0000000000022660        0xa C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
+                0x0000000000022660                isprint
  .text.libc.memcmp
-                0x0000000000022676       0x70 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
-                0x0000000000022676                memcmp
+                0x000000000002266a       0x70 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
+                0x000000000002266a                memcmp
  .text.libc.sprintf
-                0x00000000000226e6       0x2a C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
-                0x00000000000226e6                sprintf
+                0x00000000000226da       0x2a C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
+                0x00000000000226da                sprintf
  .text.libc.strnlen
-                0x0000000000022710       0x22 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
-                0x0000000000022710                strnlen
+                0x0000000000022704       0x22 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
+                0x0000000000022704                strnlen
  .text.libc.memcpy
-                0x0000000000022732       0x52 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2_asm.o)
-                0x0000000000022732                __aeabi_memcpy
-                0x0000000000022732                memcpy
-                0x000000000002273e                __aeabi_memcpy8
-                0x000000000002273e                __aeabi_memcpy4
+                0x0000000000022726       0x52 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2_asm.o)
+                0x0000000000022726                __aeabi_memcpy
+                0x0000000000022726                memcpy
+                0x0000000000022732                __aeabi_memcpy8
+                0x0000000000022732                __aeabi_memcpy4
  .text.libc.memset
-                0x0000000000022784       0x66 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2_asm.o)
-                0x0000000000022784                memset
+                0x0000000000022778       0x66 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2_asm.o)
+                0x0000000000022778                memset
  .text.libc.strcpy
-                0x00000000000227ea       0x44 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2_asm.o)
-                0x00000000000227ea                strcpy
+                0x00000000000227de       0x44 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2_asm.o)
+                0x00000000000227de                strcpy
  .text.libc.strlen
-                0x000000000002282e       0x60 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2_asm.o)
-                0x000000000002282e                strlen
- *fill*         0x000000000002288e        0x2 
+                0x0000000000022822       0x60 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2_asm.o)
+                0x0000000000022822                strlen
+ *fill*         0x0000000000022882        0x2 
  .text.libc.__vfprintf_long
-                0x0000000000022890      0x63c C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libvfprintf.o)
-                0x0000000000022890                __vfprintf_long
-                0x0000000000022ecc                __text_end__ = (__text_start__ + SIZEOF (.text))
-                0x0000000000009ae0                __text_size__ = SIZEOF (.text)
-                0x0000000000022ecc                __text_load_end__ = __text_end__
+                0x0000000000022884      0x63c C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libvfprintf.o)
+                0x0000000000022884                __vfprintf_long
+                0x0000000000022ec0                __text_end__ = (__text_start__ + SIZEOF (.text))
+                0x0000000000009ad4                __text_size__ = SIZEOF (.text)
+                0x0000000000022ec0                __text_load_end__ = __text_end__
 
 .vfp11_veneer   0x0000000100000000        0x0
  .vfp11_veneer  0x0000000100000000        0x0 linker stubs
@@ -12042,281 +12040,281 @@ Linker script and memory map
 .iplt           0x0000000100000000        0x0
  .iplt          0x0000000100000000        0x0 Output/Release/Obj/mouseware_nrf52810/thumb_crt0.o
                 0x0000000000000001                . = ASSERT (((__text_start__ == __text_end__) || ((__text_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .text is too large to fit in FLASH memory segment)
-                0x0000000000022ecc                __sdh_soc_observers_load_start__ = ALIGN (__text_end__, 0x4)
+                0x0000000000022ec0                __sdh_soc_observers_load_start__ = ALIGN (__text_end__, 0x4)
 
 .sdh_soc_observers
-                0x0000000000022ecc       0x18
-                0x0000000000022ecc                __sdh_soc_observers_start__ = .
-                0x0000000000022ecc                __start_sdh_soc_observers = __sdh_soc_observers_start__
+                0x0000000000022ec0       0x18
+                0x0000000000022ec0                __sdh_soc_observers_start__ = .
+                0x0000000000022ec0                __start_sdh_soc_observers = __sdh_soc_observers_start__
  *(SORT_BY_NAME(.sdh_soc_observers*))
  .sdh_soc_observers0
-                0x0000000000022ecc        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_fstorage_sd.o
+                0x0000000000022ec0        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_fstorage_sd.o
  .sdh_soc_observers0
-                0x0000000000022ed4        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_drv_clock.o
+                0x0000000000022ec8        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_drv_clock.o
  .sdh_soc_observers1
-                0x0000000000022edc        0x8 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
-                0x0000000000022ee4                __sdh_soc_observers_end__ = (__sdh_soc_observers_start__ + SIZEOF (.sdh_soc_observers))
+                0x0000000000022ed0        0x8 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
+                0x0000000000022ed8                __sdh_soc_observers_end__ = (__sdh_soc_observers_start__ + SIZEOF (.sdh_soc_observers))
                 0x0000000000000018                __sdh_soc_observers_size__ = SIZEOF (.sdh_soc_observers)
-                0x0000000000022ee4                __stop_sdh_soc_observers = __sdh_soc_observers_end__
-                0x0000000000022ee4                __sdh_soc_observers_load_end__ = __sdh_soc_observers_end__
+                0x0000000000022ed8                __stop_sdh_soc_observers = __sdh_soc_observers_end__
+                0x0000000000022ed8                __sdh_soc_observers_load_end__ = __sdh_soc_observers_end__
                 0x0000000000000001                . = ASSERT (((__sdh_soc_observers_start__ == __sdh_soc_observers_end__) || ((__sdh_soc_observers_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .sdh_soc_observers is too large to fit in FLASH memory segment)
-                0x0000000000022ee4                __sdh_ble_observers_load_start__ = ALIGN (__sdh_soc_observers_end__, 0x4)
+                0x0000000000022ed8                __sdh_ble_observers_load_start__ = ALIGN (__sdh_soc_observers_end__, 0x4)
 
 .sdh_ble_observers
-                0x0000000000022ee4       0x50
-                0x0000000000022ee4                __sdh_ble_observers_start__ = .
-                0x0000000000022ee4                __start_sdh_ble_observers = __sdh_ble_observers_start__
+                0x0000000000022ed8       0x50
+                0x0000000000022ed8                __sdh_ble_observers_start__ = .
+                0x0000000000022ed8                __start_sdh_ble_observers = __sdh_ble_observers_start__
  *(SORT_BY_NAME(.sdh_ble_observers*))
  .sdh_ble_observers0
-                0x0000000000022ee4        0x8 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+                0x0000000000022ed8        0x8 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
  .sdh_ble_observers1
-                0x0000000000022eec        0x8 Output/Release/Obj/mouseware_nrf52810/bsp_btn_ble.o
+                0x0000000000022ee0        0x8 Output/Release/Obj/mouseware_nrf52810/bsp_btn_ble.o
  .sdh_ble_observers1
-                0x0000000000022ef4       0x10 Output/Release/Obj/mouseware_nrf52810/main.o
+                0x0000000000022ee8       0x10 Output/Release/Obj/mouseware_nrf52810/main.o
  .sdh_ble_observers1
-                0x0000000000022f04        0x8 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+                0x0000000000022ef8        0x8 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
  .sdh_ble_observers1
-                0x0000000000022f0c        0x8 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
+                0x0000000000022f00        0x8 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
  .sdh_ble_observers2
-                0x0000000000022f14       0x10 Output/Release/Obj/mouseware_nrf52810/main.o
+                0x0000000000022f08       0x10 Output/Release/Obj/mouseware_nrf52810/main.o
  .sdh_ble_observers2
-                0x0000000000022f24        0x8 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+                0x0000000000022f18        0x8 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
  .sdh_ble_observers3
-                0x0000000000022f2c        0x8 Output/Release/Obj/mouseware_nrf52810/main.o
-                0x0000000000022f34                __sdh_ble_observers_end__ = (__sdh_ble_observers_start__ + SIZEOF (.sdh_ble_observers))
+                0x0000000000022f20        0x8 Output/Release/Obj/mouseware_nrf52810/main.o
+                0x0000000000022f28                __sdh_ble_observers_end__ = (__sdh_ble_observers_start__ + SIZEOF (.sdh_ble_observers))
                 0x0000000000000050                __sdh_ble_observers_size__ = SIZEOF (.sdh_ble_observers)
-                0x0000000000022f34                __stop_sdh_ble_observers = __sdh_ble_observers_end__
-                0x0000000000022f34                __sdh_ble_observers_load_end__ = __sdh_ble_observers_end__
+                0x0000000000022f28                __stop_sdh_ble_observers = __sdh_ble_observers_end__
+                0x0000000000022f28                __sdh_ble_observers_load_end__ = __sdh_ble_observers_end__
                 0x0000000000000001                . = ASSERT (((__sdh_ble_observers_start__ == __sdh_ble_observers_end__) || ((__sdh_ble_observers_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .sdh_ble_observers is too large to fit in FLASH memory segment)
-                0x0000000000022f34                __pwr_mgmt_data_load_start__ = ALIGN (__sdh_ble_observers_end__, 0x4)
+                0x0000000000022f28                __pwr_mgmt_data_load_start__ = ALIGN (__sdh_ble_observers_end__, 0x4)
 
-.pwr_mgmt_data  0x0000000000022f34        0x4
-                0x0000000000022f34                __pwr_mgmt_data_start__ = .
-                0x0000000000022f34                __start_pwr_mgmt_data = __pwr_mgmt_data_start__
+.pwr_mgmt_data  0x0000000000022f28        0x4
+                0x0000000000022f28                __pwr_mgmt_data_start__ = .
+                0x0000000000022f28                __start_pwr_mgmt_data = __pwr_mgmt_data_start__
  *(SORT_BY_NAME(.pwr_mgmt_data*))
  .pwr_mgmt_data0
-                0x0000000000022f34        0x4 Output/Release/Obj/mouseware_nrf52810/main.o
-                0x0000000000022f38                __pwr_mgmt_data_end__ = (__pwr_mgmt_data_start__ + SIZEOF (.pwr_mgmt_data))
+                0x0000000000022f28        0x4 Output/Release/Obj/mouseware_nrf52810/main.o
+                0x0000000000022f2c                __pwr_mgmt_data_end__ = (__pwr_mgmt_data_start__ + SIZEOF (.pwr_mgmt_data))
                 0x0000000000000004                __pwr_mgmt_data_size__ = SIZEOF (.pwr_mgmt_data)
-                0x0000000000022f38                __stop_pwr_mgmt_data = __pwr_mgmt_data_end__
-                0x0000000000022f38                __pwr_mgmt_data_load_end__ = __pwr_mgmt_data_end__
+                0x0000000000022f2c                __stop_pwr_mgmt_data = __pwr_mgmt_data_end__
+                0x0000000000022f2c                __pwr_mgmt_data_load_end__ = __pwr_mgmt_data_end__
                 0x0000000000000001                . = ASSERT (((__pwr_mgmt_data_start__ == __pwr_mgmt_data_end__) || ((__pwr_mgmt_data_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .pwr_mgmt_data is too large to fit in FLASH memory segment)
-                0x0000000000022f38                __sdh_req_observers_load_start__ = ALIGN (__pwr_mgmt_data_end__, 0x4)
+                0x0000000000022f2c                __sdh_req_observers_load_start__ = ALIGN (__pwr_mgmt_data_end__, 0x4)
 
 .sdh_req_observers
-                0x0000000000022f38        0x8
-                0x0000000000022f38                __sdh_req_observers_start__ = .
-                0x0000000000022f38                __start_sdh_req_observers = __sdh_req_observers_start__
+                0x0000000000022f2c        0x8
+                0x0000000000022f2c                __sdh_req_observers_start__ = .
+                0x0000000000022f2c                __start_sdh_req_observers = __sdh_req_observers_start__
  *(SORT_BY_NAME(.sdh_req_observers*))
  .sdh_req_observers0
-                0x0000000000022f38        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_fstorage_sd.o
-                0x0000000000022f38                m_req_obs
-                0x0000000000022f40                __sdh_req_observers_end__ = (__sdh_req_observers_start__ + SIZEOF (.sdh_req_observers))
+                0x0000000000022f2c        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_fstorage_sd.o
+                0x0000000000022f2c                m_req_obs
+                0x0000000000022f34                __sdh_req_observers_end__ = (__sdh_req_observers_start__ + SIZEOF (.sdh_req_observers))
                 0x0000000000000008                __sdh_req_observers_size__ = SIZEOF (.sdh_req_observers)
-                0x0000000000022f40                __stop_sdh_req_observers = __sdh_req_observers_end__
-                0x0000000000022f40                __sdh_req_observers_load_end__ = __sdh_req_observers_end__
+                0x0000000000022f34                __stop_sdh_req_observers = __sdh_req_observers_end__
+                0x0000000000022f34                __sdh_req_observers_load_end__ = __sdh_req_observers_end__
                 0x0000000000000001                . = ASSERT (((__sdh_req_observers_start__ == __sdh_req_observers_end__) || ((__sdh_req_observers_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .sdh_req_observers is too large to fit in FLASH memory segment)
-                0x0000000000022f40                __sdh_state_observers_load_start__ = ALIGN (__sdh_req_observers_end__, 0x4)
+                0x0000000000022f34                __sdh_state_observers_load_start__ = ALIGN (__sdh_req_observers_end__, 0x4)
 
 .sdh_state_observers
-                0x0000000000022f40       0x18
-                0x0000000000022f40                __sdh_state_observers_start__ = .
-                0x0000000000022f40                __start_sdh_state_observers = __sdh_state_observers_start__
+                0x0000000000022f34       0x18
+                0x0000000000022f34                __sdh_state_observers_start__ = .
+                0x0000000000022f34                __start_sdh_state_observers = __sdh_state_observers_start__
  *(SORT_BY_NAME(.sdh_state_observers*))
  .sdh_state_observers0
-                0x0000000000022f40        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_fstorage_sd.o
+                0x0000000000022f34        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_fstorage_sd.o
  .sdh_state_observers0
-                0x0000000000022f48        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_drv_clock.o
+                0x0000000000022f3c        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_drv_clock.o
  .sdh_state_observers0
-                0x0000000000022f50        0x8 Output/Release/Obj/mouseware_nrf52810/main.o
-                0x0000000000022f58                __sdh_state_observers_end__ = (__sdh_state_observers_start__ + SIZEOF (.sdh_state_observers))
+                0x0000000000022f44        0x8 Output/Release/Obj/mouseware_nrf52810/main.o
+                0x0000000000022f4c                __sdh_state_observers_end__ = (__sdh_state_observers_start__ + SIZEOF (.sdh_state_observers))
                 0x0000000000000018                __sdh_state_observers_size__ = SIZEOF (.sdh_state_observers)
-                0x0000000000022f58                __stop_sdh_state_observers = __sdh_state_observers_end__
-                0x0000000000022f58                __sdh_state_observers_load_end__ = __sdh_state_observers_end__
+                0x0000000000022f4c                __stop_sdh_state_observers = __sdh_state_observers_end__
+                0x0000000000022f4c                __sdh_state_observers_load_end__ = __sdh_state_observers_end__
                 0x0000000000000001                . = ASSERT (((__sdh_state_observers_start__ == __sdh_state_observers_end__) || ((__sdh_state_observers_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .sdh_state_observers is too large to fit in FLASH memory segment)
-                0x0000000000022f58                __sdh_stack_observers_load_start__ = ALIGN (__sdh_state_observers_end__, 0x4)
+                0x0000000000022f4c                __sdh_stack_observers_load_start__ = ALIGN (__sdh_state_observers_end__, 0x4)
 
 .sdh_stack_observers
-                0x0000000000022f58       0x10
-                0x0000000000022f58                __sdh_stack_observers_start__ = .
-                0x0000000000022f58                __start_sdh_stack_observers = __sdh_stack_observers_start__
+                0x0000000000022f4c       0x10
+                0x0000000000022f4c                __sdh_stack_observers_start__ = .
+                0x0000000000022f4c                __start_sdh_stack_observers = __sdh_stack_observers_start__
  *(SORT_BY_NAME(.sdh_stack_observers*))
  .sdh_stack_observers0
-                0x0000000000022f58        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
+                0x0000000000022f4c        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
  .sdh_stack_observers0
-                0x0000000000022f60        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
-                0x0000000000022f68                __sdh_stack_observers_end__ = (__sdh_stack_observers_start__ + SIZEOF (.sdh_stack_observers))
+                0x0000000000022f54        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
+                0x0000000000022f5c                __sdh_stack_observers_end__ = (__sdh_stack_observers_start__ + SIZEOF (.sdh_stack_observers))
                 0x0000000000000010                __sdh_stack_observers_size__ = SIZEOF (.sdh_stack_observers)
-                0x0000000000022f68                __stop_sdh_stack_observers = __sdh_stack_observers_end__
-                0x0000000000022f68                __sdh_stack_observers_load_end__ = __sdh_stack_observers_end__
+                0x0000000000022f5c                __stop_sdh_stack_observers = __sdh_stack_observers_end__
+                0x0000000000022f5c                __sdh_stack_observers_load_end__ = __sdh_stack_observers_end__
                 0x0000000000000001                . = ASSERT (((__sdh_stack_observers_start__ == __sdh_stack_observers_end__) || ((__sdh_stack_observers_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .sdh_stack_observers is too large to fit in FLASH memory segment)
-                0x0000000000022f68                __nrf_queue_load_start__ = ALIGN (__sdh_stack_observers_end__, 0x4)
+                0x0000000000022f5c                __nrf_queue_load_start__ = ALIGN (__sdh_stack_observers_end__, 0x4)
 
-.nrf_queue      0x0000000000022f68        0x0
-                0x0000000000022f68                __nrf_queue_start__ = .
-                0x0000000000022f68                __start_nrf_queue = __nrf_queue_start__
+.nrf_queue      0x0000000000022f5c        0x0
+                0x0000000000022f5c                __nrf_queue_start__ = .
+                0x0000000000022f5c                __start_nrf_queue = __nrf_queue_start__
  *(.nrf_queue*)
-                0x0000000000022f68                __nrf_queue_end__ = (__nrf_queue_start__ + SIZEOF (.nrf_queue))
+                0x0000000000022f5c                __nrf_queue_end__ = (__nrf_queue_start__ + SIZEOF (.nrf_queue))
                 0x0000000000000000                __nrf_queue_size__ = SIZEOF (.nrf_queue)
-                0x0000000000022f68                __stop_nrf_queue = __nrf_queue_end__
-                0x0000000000022f68                __nrf_queue_load_end__ = __nrf_queue_end__
+                0x0000000000022f5c                __stop_nrf_queue = __nrf_queue_end__
+                0x0000000000022f5c                __nrf_queue_load_end__ = __nrf_queue_end__
                 0x0000000000000001                . = ASSERT (((__nrf_queue_start__ == __nrf_queue_end__) || ((__nrf_queue_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .nrf_queue is too large to fit in FLASH memory segment)
-                0x0000000000022f68                __nrf_balloc_load_start__ = ALIGN (__nrf_queue_end__, 0x4)
+                0x0000000000022f5c                __nrf_balloc_load_start__ = ALIGN (__nrf_queue_end__, 0x4)
 
-.nrf_balloc     0x0000000000022f68       0x14
-                0x0000000000022f68                __nrf_balloc_start__ = .
-                0x0000000000022f68                __start_nrf_balloc = __nrf_balloc_start__
+.nrf_balloc     0x0000000000022f5c       0x14
+                0x0000000000022f5c                __nrf_balloc_start__ = .
+                0x0000000000022f5c                __start_nrf_balloc = __nrf_balloc_start__
  *(.nrf_balloc*)
- .nrf_balloc    0x0000000000022f68       0x14 Output/Release/Obj/mouseware_nrf52810/nrf_log_frontend.o
-                0x0000000000022f68                log_mempool
-                0x0000000000022f7c                __nrf_balloc_end__ = (__nrf_balloc_start__ + SIZEOF (.nrf_balloc))
+ .nrf_balloc    0x0000000000022f5c       0x14 Output/Release/Obj/mouseware_nrf52810/nrf_log_frontend.o
+                0x0000000000022f5c                log_mempool
+                0x0000000000022f70                __nrf_balloc_end__ = (__nrf_balloc_start__ + SIZEOF (.nrf_balloc))
                 0x0000000000000014                __nrf_balloc_size__ = SIZEOF (.nrf_balloc)
-                0x0000000000022f7c                __stop_nrf_balloc = __nrf_balloc_end__
-                0x0000000000022f7c                __nrf_balloc_load_end__ = __nrf_balloc_end__
+                0x0000000000022f70                __stop_nrf_balloc = __nrf_balloc_end__
+                0x0000000000022f70                __nrf_balloc_load_end__ = __nrf_balloc_end__
                 0x0000000000000001                . = ASSERT (((__nrf_balloc_start__ == __nrf_balloc_end__) || ((__nrf_balloc_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .nrf_balloc is too large to fit in FLASH memory segment)
-                0x0000000000022f7c                __cli_command_load_start__ = ALIGN (__nrf_balloc_end__, 0x4)
+                0x0000000000022f70                __cli_command_load_start__ = ALIGN (__nrf_balloc_end__, 0x4)
 
-.cli_command    0x0000000000022f7c        0x0
-                0x0000000000022f7c                __cli_command_start__ = .
-                0x0000000000022f7c                __start_cli_command = __cli_command_start__
+.cli_command    0x0000000000022f70        0x0
+                0x0000000000022f70                __cli_command_start__ = .
+                0x0000000000022f70                __start_cli_command = __cli_command_start__
  *(.cli_command*)
-                0x0000000000022f7c                __cli_command_end__ = (__cli_command_start__ + SIZEOF (.cli_command))
+                0x0000000000022f70                __cli_command_end__ = (__cli_command_start__ + SIZEOF (.cli_command))
                 0x0000000000000000                __cli_command_size__ = SIZEOF (.cli_command)
-                0x0000000000022f7c                __stop_cli_command = __cli_command_end__
-                0x0000000000022f7c                __cli_command_load_end__ = __cli_command_end__
+                0x0000000000022f70                __stop_cli_command = __cli_command_end__
+                0x0000000000022f70                __cli_command_load_end__ = __cli_command_end__
                 0x0000000000000001                . = ASSERT (((__cli_command_start__ == __cli_command_end__) || ((__cli_command_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .cli_command is too large to fit in FLASH memory segment)
-                0x0000000000022f7c                __crypto_data_load_start__ = ALIGN (__cli_command_end__, 0x4)
+                0x0000000000022f70                __crypto_data_load_start__ = ALIGN (__cli_command_end__, 0x4)
 
-.crypto_data    0x0000000000022f7c        0x0
-                0x0000000000022f7c                __crypto_data_start__ = .
-                0x0000000000022f7c                __start_crypto_data = __crypto_data_start__
+.crypto_data    0x0000000000022f70        0x0
+                0x0000000000022f70                __crypto_data_start__ = .
+                0x0000000000022f70                __start_crypto_data = __crypto_data_start__
  *(SORT_BY_NAME(.crypto_data*))
-                0x0000000000022f7c                __crypto_data_end__ = (__crypto_data_start__ + SIZEOF (.crypto_data))
+                0x0000000000022f70                __crypto_data_end__ = (__crypto_data_start__ + SIZEOF (.crypto_data))
                 0x0000000000000000                __crypto_data_size__ = SIZEOF (.crypto_data)
-                0x0000000000022f7c                __stop_crypto_data = __crypto_data_end__
-                0x0000000000022f7c                __crypto_data_load_end__ = __crypto_data_end__
+                0x0000000000022f70                __stop_crypto_data = __crypto_data_end__
+                0x0000000000022f70                __crypto_data_load_end__ = __crypto_data_end__
                 0x0000000000000001                . = ASSERT (((__crypto_data_start__ == __crypto_data_end__) || ((__crypto_data_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .crypto_data is too large to fit in FLASH memory segment)
-                0x0000000000022f7c                __log_const_data_load_start__ = ALIGN (__crypto_data_end__, 0x4)
+                0x0000000000022f70                __log_const_data_load_start__ = ALIGN (__crypto_data_end__, 0x4)
 
 .log_const_data
-                0x0000000000022f7c       0xd0
-                0x0000000000022f7c                __log_const_data_start__ = .
-                0x0000000000022f7c                __start_log_const_data = __log_const_data_start__
+                0x0000000000022f70       0xd0
+                0x0000000000022f70                __log_const_data_start__ = .
+                0x0000000000022f70                __start_log_const_data = __log_const_data_start__
  *(SORT_BY_NAME(.log_const_data*))
  .log_const_data_CLOCK
-                0x0000000000022f7c        0x8 Output/Release/Obj/mouseware_nrf52810/nrfx_clock.o
-                0x0000000000022f7c                m_nrf_log_CLOCK_logs_data_const
+                0x0000000000022f70        0x8 Output/Release/Obj/mouseware_nrf52810/nrfx_clock.o
+                0x0000000000022f70                m_nrf_log_CLOCK_logs_data_const
  .log_const_data_GPIOTE
-                0x0000000000022f84        0x8 Output/Release/Obj/mouseware_nrf52810/nrfx_gpiote.o
-                0x0000000000022f84                m_nrf_log_GPIOTE_logs_data_const
+                0x0000000000022f78        0x8 Output/Release/Obj/mouseware_nrf52810/nrfx_gpiote.o
+                0x0000000000022f78                m_nrf_log_GPIOTE_logs_data_const
  .log_const_data_PRS
-                0x0000000000022f8c        0x8 Output/Release/Obj/mouseware_nrf52810/nrfx_prs.o
-                0x0000000000022f8c                m_nrf_log_PRS_logs_data_const
+                0x0000000000022f80        0x8 Output/Release/Obj/mouseware_nrf52810/nrfx_prs.o
+                0x0000000000022f80                m_nrf_log_PRS_logs_data_const
  .log_const_data_TIMER
-                0x0000000000022f94        0x8 Output/Release/Obj/mouseware_nrf52810/nrfx_timer.o
-                0x0000000000022f94                m_nrf_log_TIMER_logs_data_const
+                0x0000000000022f88        0x8 Output/Release/Obj/mouseware_nrf52810/nrfx_timer.o
+                0x0000000000022f88                m_nrf_log_TIMER_logs_data_const
  .log_const_data_TWIM
-                0x0000000000022f9c        0x8 Output/Release/Obj/mouseware_nrf52810/nrfx_twim.o
-                0x0000000000022f9c                m_nrf_log_TWIM_logs_data_const
+                0x0000000000022f90        0x8 Output/Release/Obj/mouseware_nrf52810/nrfx_twim.o
+                0x0000000000022f90                m_nrf_log_TWIM_logs_data_const
  .log_const_data_app
-                0x0000000000022fa4        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_log_frontend.o
-                0x0000000000022fa4                m_nrf_log_app_logs_data_const
+                0x0000000000022f98        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_log_frontend.o
+                0x0000000000022f98                m_nrf_log_app_logs_data_const
  .log_const_data_app_button
-                0x0000000000022fac        0x8 Output/Release/Obj/mouseware_nrf52810/app_button.o
-                0x0000000000022fac                m_nrf_log_app_button_logs_data_const
+                0x0000000000022fa0        0x8 Output/Release/Obj/mouseware_nrf52810/app_button.o
+                0x0000000000022fa0                m_nrf_log_app_button_logs_data_const
  .log_const_data_app_timer
-                0x0000000000022fb4        0x8 Output/Release/Obj/mouseware_nrf52810/app_timer2.o
-                0x0000000000022fb4                m_nrf_log_app_timer_logs_data_const
+                0x0000000000022fa8        0x8 Output/Release/Obj/mouseware_nrf52810/app_timer2.o
+                0x0000000000022fa8                m_nrf_log_app_timer_logs_data_const
  .log_const_data_ble_nus
-                0x0000000000022fbc        0x8 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
-                0x0000000000022fbc                m_nrf_log_ble_nus_logs_data_const
+                0x0000000000022fb0        0x8 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
+                0x0000000000022fb0                m_nrf_log_ble_nus_logs_data_const
  .log_const_data_clock
-                0x0000000000022fc4        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_drv_clock.o
-                0x0000000000022fc4                m_nrf_log_clock_logs_data_const
+                0x0000000000022fb8        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_drv_clock.o
+                0x0000000000022fb8                m_nrf_log_clock_logs_data_const
  .log_const_data_nrf_ble_gatt
-                0x0000000000022fcc        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
-                0x0000000000022fcc                m_nrf_log_nrf_ble_gatt_logs_data_const
+                0x0000000000022fc0        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
+                0x0000000000022fc0                m_nrf_log_nrf_ble_gatt_logs_data_const
  .log_const_data_nrf_fstorage
-                0x0000000000022fd4        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_fstorage.o
-                0x0000000000022fd4                m_nrf_log_nrf_fstorage_logs_data_const
+                0x0000000000022fc8        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_fstorage.o
+                0x0000000000022fc8                m_nrf_log_nrf_fstorage_logs_data_const
  .log_const_data_nrf_sdh
-                0x0000000000022fdc        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
-                0x0000000000022fdc                m_nrf_log_nrf_sdh_logs_data_const
+                0x0000000000022fd0        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+                0x0000000000022fd0                m_nrf_log_nrf_sdh_logs_data_const
  .log_const_data_nrf_sdh_ble
-                0x0000000000022fe4        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
-                0x0000000000022fe4                m_nrf_log_nrf_sdh_ble_logs_data_const
+                0x0000000000022fd8        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
+                0x0000000000022fd8                m_nrf_log_nrf_sdh_ble_logs_data_const
  .log_const_data_nrf_sdh_soc
-                0x0000000000022fec        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
-                0x0000000000022fec                m_nrf_log_nrf_sdh_soc_logs_data_const
+                0x0000000000022fe0        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
+                0x0000000000022fe0                m_nrf_log_nrf_sdh_soc_logs_data_const
  .log_const_data_peer_manager
-                0x0000000000022ff4        0x8 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
-                0x0000000000022ff4                m_nrf_log_peer_manager_logs_data_const
+                0x0000000000022fe8        0x8 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
+                0x0000000000022fe8                m_nrf_log_peer_manager_logs_data_const
  .log_const_data_peer_manager_gcm
-                0x0000000000022ffc        0x8 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
-                0x0000000000022ffc                m_nrf_log_peer_manager_gcm_logs_data_const
+                0x0000000000022ff0        0x8 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x0000000000022ff0                m_nrf_log_peer_manager_gcm_logs_data_const
  .log_const_data_peer_manager_gscm
-                0x0000000000023004        0x8 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
-                0x0000000000023004                m_nrf_log_peer_manager_gscm_logs_data_const
+                0x0000000000022ff8        0x8 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+                0x0000000000022ff8                m_nrf_log_peer_manager_gscm_logs_data_const
  .log_const_data_peer_manager_handler
-                0x000000000002300c        0x8 Output/Release/Obj/mouseware_nrf52810/peer_manager_handler.o
-                0x000000000002300c                m_nrf_log_peer_manager_handler_logs_data_const
+                0x0000000000023000        0x8 Output/Release/Obj/mouseware_nrf52810/peer_manager_handler.o
+                0x0000000000023000                m_nrf_log_peer_manager_handler_logs_data_const
  .log_const_data_peer_manager_im
-                0x0000000000023014        0x8 Output/Release/Obj/mouseware_nrf52810/id_manager.o
-                0x0000000000023014                m_nrf_log_peer_manager_im_logs_data_const
+                0x0000000000023008        0x8 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x0000000000023008                m_nrf_log_peer_manager_im_logs_data_const
  .log_const_data_peer_manager_pdb
-                0x000000000002301c        0x8 Output/Release/Obj/mouseware_nrf52810/peer_database.o
-                0x000000000002301c                m_nrf_log_peer_manager_pdb_logs_data_const
+                0x0000000000023010        0x8 Output/Release/Obj/mouseware_nrf52810/peer_database.o
+                0x0000000000023010                m_nrf_log_peer_manager_pdb_logs_data_const
  .log_const_data_peer_manager_pds
-                0x0000000000023024        0x8 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
-                0x0000000000023024                m_nrf_log_peer_manager_pds_logs_data_const
+                0x0000000000023018        0x8 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+                0x0000000000023018                m_nrf_log_peer_manager_pds_logs_data_const
  .log_const_data_peer_manager_sm
-                0x000000000002302c        0x8 Output/Release/Obj/mouseware_nrf52810/security_manager.o
-                0x000000000002302c                m_nrf_log_peer_manager_sm_logs_data_const
+                0x0000000000023020        0x8 Output/Release/Obj/mouseware_nrf52810/security_manager.o
+                0x0000000000023020                m_nrf_log_peer_manager_sm_logs_data_const
  .log_const_data_peer_manager_smd
-                0x0000000000023034        0x8 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
-                0x0000000000023034                m_nrf_log_peer_manager_smd_logs_data_const
+                0x0000000000023028        0x8 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+                0x0000000000023028                m_nrf_log_peer_manager_smd_logs_data_const
  .log_const_data_pwr_mgmt
-                0x000000000002303c        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_pwr_mgmt.o
-                0x000000000002303c                m_nrf_log_pwr_mgmt_logs_data_const
+                0x0000000000023030        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_pwr_mgmt.o
+                0x0000000000023030                m_nrf_log_pwr_mgmt_logs_data_const
  .log_const_data_sortlist
-                0x0000000000023044        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_sortlist.o
-                0x0000000000023044                m_nrf_log_sortlist_logs_data_const
-                0x000000000002304c                __log_const_data_end__ = (__log_const_data_start__ + SIZEOF (.log_const_data))
+                0x0000000000023038        0x8 Output/Release/Obj/mouseware_nrf52810/nrf_sortlist.o
+                0x0000000000023038                m_nrf_log_sortlist_logs_data_const
+                0x0000000000023040                __log_const_data_end__ = (__log_const_data_start__ + SIZEOF (.log_const_data))
                 0x00000000000000d0                __log_const_data_size__ = SIZEOF (.log_const_data)
-                0x000000000002304c                __stop_log_const_data = __log_const_data_end__
-                0x000000000002304c                __log_const_data_load_end__ = __log_const_data_end__
+                0x0000000000023040                __stop_log_const_data = __log_const_data_end__
+                0x0000000000023040                __log_const_data_load_end__ = __log_const_data_end__
                 0x0000000000000001                . = ASSERT (((__log_const_data_start__ == __log_const_data_end__) || ((__log_const_data_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .log_const_data is too large to fit in FLASH memory segment)
-                0x000000000002304c                __log_backends_load_start__ = ALIGN (__log_const_data_end__, 0x4)
+                0x0000000000023040                __log_backends_load_start__ = ALIGN (__log_const_data_end__, 0x4)
 
-.log_backends   0x000000000002304c       0x10
-                0x000000000002304c                __log_backends_start__ = .
-                0x000000000002304c                __start_log_backends = __log_backends_start__
+.log_backends   0x0000000000023040       0x10
+                0x0000000000023040                __log_backends_start__ = .
+                0x0000000000023040                __start_log_backends = __log_backends_start__
  *(SORT_BY_NAME(.log_backends*))
- .log_backends  0x000000000002304c       0x10 Output/Release/Obj/mouseware_nrf52810/nrf_log_default_backends.o
-                0x000000000002305c                __log_backends_end__ = (__log_backends_start__ + SIZEOF (.log_backends))
+ .log_backends  0x0000000000023040       0x10 Output/Release/Obj/mouseware_nrf52810/nrf_log_default_backends.o
+                0x0000000000023050                __log_backends_end__ = (__log_backends_start__ + SIZEOF (.log_backends))
                 0x0000000000000010                __log_backends_size__ = SIZEOF (.log_backends)
-                0x000000000002305c                __stop_log_backends = __log_backends_end__
-                0x000000000002305c                __log_backends_load_end__ = __log_backends_end__
+                0x0000000000023050                __stop_log_backends = __log_backends_end__
+                0x0000000000023050                __log_backends_load_end__ = __log_backends_end__
                 0x0000000000000001                . = ASSERT (((__log_backends_start__ == __log_backends_end__) || ((__log_backends_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .log_backends is too large to fit in FLASH memory segment)
-                0x000000000002305c                __nrf_sections_load_start__ = ALIGN (__log_backends_end__, 0x4)
+                0x0000000000023050                __nrf_sections_load_start__ = ALIGN (__log_backends_end__, 0x4)
 
-.nrf_sections   0x000000000002305c        0x0
-                0x000000000002305c                __nrf_sections_start__ = .
-                0x000000000002305c                __start_nrf_sections = __nrf_sections_start__
+.nrf_sections   0x0000000000023050        0x0
+                0x0000000000023050                __nrf_sections_start__ = .
+                0x0000000000023050                __start_nrf_sections = __nrf_sections_start__
  *(.nrf_sections .nrf_sections.*)
-                0x000000000002305c                __nrf_sections_end__ = (__nrf_sections_start__ + SIZEOF (.nrf_sections))
+                0x0000000000023050                __nrf_sections_end__ = (__nrf_sections_start__ + SIZEOF (.nrf_sections))
                 0x0000000000000000                __nrf_sections_size__ = SIZEOF (.nrf_sections)
-                0x000000000002305c                __nrf_sections_load_end__ = __nrf_sections_end__
+                0x0000000000023050                __nrf_sections_load_end__ = __nrf_sections_end__
                 0x0000000000000001                . = ASSERT (((__nrf_sections_start__ == __nrf_sections_end__) || ((__nrf_sections_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .nrf_sections is too large to fit in FLASH memory segment)
-                0x000000000002305c                __cli_sorted_cmd_ptrs_load_start__ = ALIGN (__nrf_sections_end__, 0x4)
+                0x0000000000023050                __cli_sorted_cmd_ptrs_load_start__ = ALIGN (__nrf_sections_end__, 0x4)
 
 .cli_sorted_cmd_ptrs
-                0x0000000020002ae8        0x0 load address 0x000000000002305c
+                0x0000000020002ae8        0x0 load address 0x0000000000023050
                 0x0000000020002ae8                __cli_sorted_cmd_ptrs_start__ = .
  *(.cli_sorted_cmd_ptrs*)
                 0x0000000020002ae8                __cli_sorted_cmd_ptrs_end__ = (__cli_sorted_cmd_ptrs_start__ + SIZEOF (.cli_sorted_cmd_ptrs))
                 0x0000000000000000                __cli_sorted_cmd_ptrs_size__ = SIZEOF (.cli_sorted_cmd_ptrs)
-                0x000000000002305c                __cli_sorted_cmd_ptrs_load_end__ = (__cli_sorted_cmd_ptrs_load_start__ + SIZEOF (.cli_sorted_cmd_ptrs))
+                0x0000000000023050                __cli_sorted_cmd_ptrs_load_end__ = (__cli_sorted_cmd_ptrs_load_start__ + SIZEOF (.cli_sorted_cmd_ptrs))
                 0x0000000000000001                . = ASSERT (((__cli_sorted_cmd_ptrs_load_start__ == __cli_sorted_cmd_ptrs_load_end__) || ((__cli_sorted_cmd_ptrs_load_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .cli_sorted_cmd_ptrs is too large to fit in FLASH memory segment)
 
 .cli_sorted_cmd_ptrs_run
@@ -12328,16 +12326,16 @@ Linker script and memory map
                 0x0000000020002ae8                __stop_cli_sorted_cmd_ptrs = __cli_sorted_cmd_ptrs_run_end__
                 0x0000000020002ae8                __cli_sorted_cmd_ptrs_run_load_end__ = __cli_sorted_cmd_ptrs_run_end__
                 0x0000000000000001                . = ASSERT (((__cli_sorted_cmd_ptrs_run_start__ == __cli_sorted_cmd_ptrs_run_end__) || ((__cli_sorted_cmd_ptrs_run_end__ - __RAM1_segment_start__) <= __RAM1_segment_size__)), error: .cli_sorted_cmd_ptrs_run is too large to fit in RAM1 memory segment)
-                0x000000000002305c                __fs_data_load_start__ = ALIGN ((__cli_sorted_cmd_ptrs_load_start__ + SIZEOF (.cli_sorted_cmd_ptrs)), 0x4)
+                0x0000000000023050                __fs_data_load_start__ = ALIGN ((__cli_sorted_cmd_ptrs_load_start__ + SIZEOF (.cli_sorted_cmd_ptrs)), 0x4)
 
-.fs_data        0x0000000020002ae8       0x14 load address 0x000000000002305c
+.fs_data        0x0000000020002ae8       0x14 load address 0x0000000000023050
                 0x0000000020002ae8                __fs_data_start__ = .
  *(.fs_data*)
  .fs_data       0x0000000020002ae8       0x14 Output/Release/Obj/mouseware_nrf52810/fds.o
                 0x0000000020002ae8                m_fs
                 0x0000000020002afc                __fs_data_end__ = (__fs_data_start__ + SIZEOF (.fs_data))
                 0x0000000000000014                __fs_data_size__ = SIZEOF (.fs_data)
-                0x0000000000023070                __fs_data_load_end__ = (__fs_data_load_start__ + SIZEOF (.fs_data))
+                0x0000000000023064                __fs_data_load_end__ = (__fs_data_load_start__ + SIZEOF (.fs_data))
                 0x0000000000000001                . = ASSERT (((__fs_data_load_start__ == __fs_data_load_end__) || ((__fs_data_load_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .fs_data is too large to fit in FLASH memory segment)
 
 .fs_data_run    0x0000000020002ae8        0x0
@@ -12348,15 +12346,15 @@ Linker script and memory map
                 0x0000000020002afc                __stop_fs_data = __fs_data_run_end__
                 0x0000000020002afc                __fs_data_run_load_end__ = __fs_data_run_end__
                 0x0000000000000001                . = ASSERT (((__fs_data_run_start__ == __fs_data_run_end__) || ((__fs_data_run_end__ - __RAM1_segment_start__) <= __RAM1_segment_size__)), error: .fs_data_run is too large to fit in RAM1 memory segment)
-                0x0000000000023070                __log_dynamic_data_load_start__ = ALIGN ((__fs_data_load_start__ + SIZEOF (.fs_data)), 0x4)
+                0x0000000000023064                __log_dynamic_data_load_start__ = ALIGN ((__fs_data_load_start__ + SIZEOF (.fs_data)), 0x4)
 
 .log_dynamic_data
-                0x0000000020002afc        0x0 load address 0x0000000000023070
+                0x0000000020002afc        0x0 load address 0x0000000000023064
                 0x0000000020002afc                __log_dynamic_data_start__ = .
  *(SORT_BY_NAME(.log_dynamic_data*))
                 0x0000000020002afc                __log_dynamic_data_end__ = (__log_dynamic_data_start__ + SIZEOF (.log_dynamic_data))
                 0x0000000000000000                __log_dynamic_data_size__ = SIZEOF (.log_dynamic_data)
-                0x0000000000023070                __log_dynamic_data_load_end__ = (__log_dynamic_data_load_start__ + SIZEOF (.log_dynamic_data))
+                0x0000000000023064                __log_dynamic_data_load_end__ = (__log_dynamic_data_load_start__ + SIZEOF (.log_dynamic_data))
                 0x0000000000000001                . = ASSERT (((__log_dynamic_data_load_start__ == __log_dynamic_data_load_end__) || ((__log_dynamic_data_load_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .log_dynamic_data is too large to fit in FLASH memory segment)
 
 .log_dynamic_data_run
@@ -12368,15 +12366,15 @@ Linker script and memory map
                 0x0000000020002afc                __stop_log_dynamic_data = __log_dynamic_data_run_end__
                 0x0000000020002afc                __log_dynamic_data_run_load_end__ = __log_dynamic_data_run_end__
                 0x0000000000000001                . = ASSERT (((__log_dynamic_data_run_start__ == __log_dynamic_data_run_end__) || ((__log_dynamic_data_run_end__ - __RAM1_segment_start__) <= __RAM1_segment_size__)), error: .log_dynamic_data_run is too large to fit in RAM1 memory segment)
-                0x0000000000023070                __log_filter_data_load_start__ = ALIGN ((__log_dynamic_data_load_start__ + SIZEOF (.log_dynamic_data)), 0x4)
+                0x0000000000023064                __log_filter_data_load_start__ = ALIGN ((__log_dynamic_data_load_start__ + SIZEOF (.log_dynamic_data)), 0x4)
 
 .log_filter_data
-                0x0000000020002afc        0x0 load address 0x0000000000023070
+                0x0000000020002afc        0x0 load address 0x0000000000023064
                 0x0000000020002afc                __log_filter_data_start__ = .
  *(SORT_BY_NAME(.log_filter_data*))
                 0x0000000020002afc                __log_filter_data_end__ = (__log_filter_data_start__ + SIZEOF (.log_filter_data))
                 0x0000000000000000                __log_filter_data_size__ = SIZEOF (.log_filter_data)
-                0x0000000000023070                __log_filter_data_load_end__ = (__log_filter_data_load_start__ + SIZEOF (.log_filter_data))
+                0x0000000000023064                __log_filter_data_load_end__ = (__log_filter_data_load_start__ + SIZEOF (.log_filter_data))
                 0x0000000000000001                . = ASSERT (((__log_filter_data_load_start__ == __log_filter_data_load_end__) || ((__log_filter_data_load_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .log_filter_data is too large to fit in FLASH memory segment)
 
 .log_filter_data_run
@@ -12399,35 +12397,36 @@ Linker script and memory map
                 0x0000000000000000                __nrf_sections_run_end_size__ = SIZEOF (.nrf_sections_run_end)
                 0x0000000020002afc                __nrf_sections_run_end_load_end__ = __nrf_sections_run_end_end__
                 0x0000000000000001                . = ASSERT (((__nrf_sections_run_end_start__ == __nrf_sections_run_end_end__) || ((__nrf_sections_run_end_end__ - __RAM1_segment_start__) <= __RAM1_segment_size__)), error: .nrf_sections_run_end is too large to fit in RAM1 memory segment)
-                0x0000000000023070                __dtors_load_start__ = ALIGN ((__log_filter_data_load_start__ + SIZEOF (.log_filter_data)), 0x4)
+                0x0000000000023064                __dtors_load_start__ = ALIGN ((__log_filter_data_load_start__ + SIZEOF (.log_filter_data)), 0x4)
 
-.dtors          0x0000000000023070        0x0
-                0x0000000000023070                __dtors_start__ = .
+.dtors          0x0000000000023064        0x0
+                0x0000000000023064                __dtors_start__ = .
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.fini_array)
  *(SORT_BY_NAME(.fini_array.*))
-                0x0000000000023070                __dtors_end__ = (__dtors_start__ + SIZEOF (.dtors))
+                0x0000000000023064                __dtors_end__ = (__dtors_start__ + SIZEOF (.dtors))
                 0x0000000000000000                __dtors_size__ = SIZEOF (.dtors)
-                0x0000000000023070                __dtors_load_end__ = __dtors_end__
+                0x0000000000023064                __dtors_load_end__ = __dtors_end__
                 0x0000000000000001                . = ASSERT (((__dtors_start__ == __dtors_end__) || ((__dtors_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .dtors is too large to fit in FLASH memory segment)
-                0x0000000000023070                __ctors_load_start__ = ALIGN (__dtors_end__, 0x4)
+                0x0000000000023064                __ctors_load_start__ = ALIGN (__dtors_end__, 0x4)
 
-.ctors          0x0000000000023070        0x0
-                0x0000000000023070                __ctors_start__ = .
+.ctors          0x0000000000023064        0x0
+                0x0000000000023064                __ctors_start__ = .
  *(SORT_BY_NAME(.ctors.*))
  *(.ctors)
  *(.init_array)
  *(SORT_BY_NAME(.init_array.*))
-                0x0000000000023070                __ctors_end__ = (__ctors_start__ + SIZEOF (.ctors))
+                0x0000000000023064                __ctors_end__ = (__ctors_start__ + SIZEOF (.ctors))
                 0x0000000000000000                __ctors_size__ = SIZEOF (.ctors)
-                0x0000000000023070                __ctors_load_end__ = __ctors_end__
+                0x0000000000023064                __ctors_load_end__ = __ctors_end__
                 0x0000000000000001                . = ASSERT (((__ctors_start__ == __ctors_end__) || ((__ctors_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .ctors is too large to fit in FLASH memory segment)
-                0x0000000000023070                __rodata_load_start__ = ALIGN (__ctors_end__, 0x4)
+                0x0000000000023064                __rodata_load_start__ = ALIGN (__ctors_end__, 0x4)
 
-.rodata         0x0000000000023070     0x2043
-                0x0000000000023070                __rodata_start__ = .
+.rodata         0x0000000000023064     0x204f
+                0x0000000000023064                __rodata_start__ = .
  *(.rodata .rodata.* .gnu.linkonce.r.*)
+ *fill*         0x0000000000023064        0xc 
  .rodata.delay_machine_code.0
                 0x0000000000023070        0x6 Output/Release/Obj/mouseware_nrf52810/nrf_log_backend_rtt.o
  *fill*         0x0000000000023076        0x2 
@@ -12758,7 +12757,7 @@ Linker script and memory map
  .rodata.libc.__vfprintf_int.str1.4
                 0x00000000000250ac        0x7 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libvfprintf.o)
                 0x00000000000250b3                __rodata_end__ = (__rodata_start__ + SIZEOF (.rodata))
-                0x0000000000002043                __rodata_size__ = SIZEOF (.rodata)
+                0x000000000000204f                __rodata_size__ = SIZEOF (.rodata)
                 0x00000000000250b3                __rodata_load_end__ = __rodata_end__
 
 .rel.dyn        0x00000000000250b4        0x0
@@ -13476,7 +13475,7 @@ LOAD linker stubs
  .comment       0x000000000000003f       0x40 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libc2.o)
  .comment       0x000000000000003f       0x40 C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 5.62/lib/libc_v7em_t_le_eabi.a(libvfprintf.o)
 
-.debug_line     0x0000000000000000    0x33376
+.debug_line     0x0000000000000000    0x33367
  .debug_line    0x0000000000000000      0x21e Output/Release/Obj/mouseware_nrf52810/thumb_crt0.o
  .debug_line    0x000000000000021e      0x98a Output/Release/Obj/mouseware_nrf52810/nrf_log_backend_rtt.o
  .debug_line    0x0000000000000ba8      0x754 Output/Release/Obj/mouseware_nrf52810/nrf_log_backend_serial.o
@@ -13517,39 +13516,39 @@ LOAD linker stubs
  .debug_line    0x00000000000173e0     0x1031 Output/Release/Obj/mouseware_nrf52810/nrfx_timer.o
  .debug_line    0x0000000000018411      0xaea Output/Release/Obj/mouseware_nrf52810/bsp.o
  .debug_line    0x0000000000018efb      0x989 Output/Release/Obj/mouseware_nrf52810/bsp_btn_ble.o
- .debug_line    0x0000000000019884     0x2219 Output/Release/Obj/mouseware_nrf52810/main.o
- .debug_line    0x000000000001ba9d      0xfe7 Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
- .debug_line    0x000000000001ca84      0x900 Output/Release/Obj/mouseware_nrf52810/ble_cus.o
- .debug_line    0x000000000001d384      0xb28 Output/Release/Obj/mouseware_nrf52810/max17048.o
- .debug_line    0x000000000001deac     0x1365 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
- .debug_line    0x000000000001f211      0xf93 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
- .debug_line    0x00000000000201a4      0xef6 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
- .debug_line    0x000000000002109a      0xb71 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
- .debug_line    0x0000000000021c0b      0xc34 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
- .debug_line    0x000000000002283f      0x553 Output/Release/Obj/mouseware_nrf52810/ble_link_ctx_manager.o
- .debug_line    0x0000000000022d92      0x700 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
- .debug_line    0x0000000000023492      0x8e6 Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
- .debug_line    0x0000000000023d78      0x6be Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
- .debug_line    0x0000000000024436     0x11eb Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
- .debug_line    0x0000000000025621      0xc4e Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
- .debug_line    0x000000000002626f     0x1198 Output/Release/Obj/mouseware_nrf52810/id_manager.o
- .debug_line    0x0000000000027407     0x100b Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
- .debug_line    0x0000000000028412     0x1037 Output/Release/Obj/mouseware_nrf52810/peer_database.o
- .debug_line    0x0000000000029449      0x7ce Output/Release/Obj/mouseware_nrf52810/peer_id.o
- .debug_line    0x0000000000029c17     0x1ad8 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
- .debug_line    0x000000000002b6ef     0x113b Output/Release/Obj/mouseware_nrf52810/peer_manager_handler.o
- .debug_line    0x000000000002c82a      0x606 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
- .debug_line    0x000000000002ce30     0x1093 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
- .debug_line    0x000000000002dec3      0xf80 Output/Release/Obj/mouseware_nrf52810/security_manager.o
- .debug_line    0x000000000002ee43      0xb71 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
- .debug_line    0x000000000002f9b4      0xb10 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
- .debug_line    0x00000000000304c4      0x9ee Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
- .debug_line    0x0000000000030eb2      0x638 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
- .debug_line    0x00000000000314ea      0xad2 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
- .debug_line    0x0000000000031fbc      0xd55 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
- .debug_line    0x0000000000032d11      0x665 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
+ .debug_line    0x0000000000019884     0x220a Output/Release/Obj/mouseware_nrf52810/main.o
+ .debug_line    0x000000000001ba8e      0xfe7 Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
+ .debug_line    0x000000000001ca75      0x900 Output/Release/Obj/mouseware_nrf52810/ble_cus.o
+ .debug_line    0x000000000001d375      0xb28 Output/Release/Obj/mouseware_nrf52810/max17048.o
+ .debug_line    0x000000000001de9d     0x1365 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
+ .debug_line    0x000000000001f202      0xf93 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
+ .debug_line    0x0000000000020195      0xef6 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
+ .debug_line    0x000000000002108b      0xb71 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+ .debug_line    0x0000000000021bfc      0xc34 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+ .debug_line    0x0000000000022830      0x553 Output/Release/Obj/mouseware_nrf52810/ble_link_ctx_manager.o
+ .debug_line    0x0000000000022d83      0x700 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
+ .debug_line    0x0000000000023483      0x8e6 Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
+ .debug_line    0x0000000000023d69      0x6be Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
+ .debug_line    0x0000000000024427     0x11eb Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+ .debug_line    0x0000000000025612      0xc4e Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+ .debug_line    0x0000000000026260     0x1198 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+ .debug_line    0x00000000000273f8     0x100b Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+ .debug_line    0x0000000000028403     0x1037 Output/Release/Obj/mouseware_nrf52810/peer_database.o
+ .debug_line    0x000000000002943a      0x7ce Output/Release/Obj/mouseware_nrf52810/peer_id.o
+ .debug_line    0x0000000000029c08     0x1ad8 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
+ .debug_line    0x000000000002b6e0     0x113b Output/Release/Obj/mouseware_nrf52810/peer_manager_handler.o
+ .debug_line    0x000000000002c81b      0x606 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
+ .debug_line    0x000000000002ce21     0x1093 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+ .debug_line    0x000000000002deb4      0xf80 Output/Release/Obj/mouseware_nrf52810/security_manager.o
+ .debug_line    0x000000000002ee34      0xb71 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
+ .debug_line    0x000000000002f9a5      0xb10 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+ .debug_line    0x00000000000304b5      0x9ee Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
+ .debug_line    0x0000000000030ea3      0x638 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
+ .debug_line    0x00000000000314db      0xad2 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
+ .debug_line    0x0000000000031fad      0xd55 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+ .debug_line    0x0000000000032d02      0x665 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
 
-.debug_info     0x0000000000000000    0x5e9d2
+.debug_info     0x0000000000000000    0x5e9db
  .debug_info    0x0000000000000000       0x22 Output/Release/Obj/mouseware_nrf52810/thumb_crt0.o
  .debug_info    0x0000000000000022      0x54b Output/Release/Obj/mouseware_nrf52810/nrf_log_backend_rtt.o
  .debug_info    0x000000000000056d      0x77b Output/Release/Obj/mouseware_nrf52810/nrf_log_backend_serial.o
@@ -13590,39 +13589,39 @@ LOAD linker stubs
  .debug_info    0x000000000001fa1f     0x1afd Output/Release/Obj/mouseware_nrf52810/nrfx_timer.o
  .debug_info    0x000000000002151c      0xa37 Output/Release/Obj/mouseware_nrf52810/bsp.o
  .debug_info    0x0000000000021f53     0x1926 Output/Release/Obj/mouseware_nrf52810/bsp_btn_ble.o
- .debug_info    0x0000000000023879     0x6e40 Output/Release/Obj/mouseware_nrf52810/main.o
- .debug_info    0x000000000002a6b9     0x1717 Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
- .debug_info    0x000000000002bdd0      0x48e Output/Release/Obj/mouseware_nrf52810/ble_cus.o
- .debug_info    0x000000000002c25e      0xf2a Output/Release/Obj/mouseware_nrf52810/max17048.o
- .debug_info    0x000000000002d188     0x1744 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
- .debug_info    0x000000000002e8cc     0x1ad2 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
- .debug_info    0x000000000003039e     0x2b81 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
- .debug_info    0x0000000000032f1f     0x2466 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
- .debug_info    0x0000000000035385     0x241b Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
- .debug_info    0x00000000000377a0      0x191 Output/Release/Obj/mouseware_nrf52810/ble_link_ctx_manager.o
- .debug_info    0x0000000000037931      0xc6c Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
- .debug_info    0x000000000003859d     0x1ec9 Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
- .debug_info    0x000000000003a466     0x1b62 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
- .debug_info    0x000000000003bfc8     0x37b2 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
- .debug_info    0x000000000003f77a     0x15c0 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
- .debug_info    0x0000000000040d3a     0x3460 Output/Release/Obj/mouseware_nrf52810/id_manager.o
- .debug_info    0x000000000004419a     0x1ec0 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
- .debug_info    0x000000000004605a     0x1b58 Output/Release/Obj/mouseware_nrf52810/peer_database.o
- .debug_info    0x0000000000047bb2      0x666 Output/Release/Obj/mouseware_nrf52810/peer_id.o
- .debug_info    0x0000000000048218     0x3c0c Output/Release/Obj/mouseware_nrf52810/peer_manager.o
- .debug_info    0x000000000004be24     0x276f Output/Release/Obj/mouseware_nrf52810/peer_manager_handler.o
- .debug_info    0x000000000004e593      0x508 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
- .debug_info    0x000000000004ea9b     0x3953 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
- .debug_info    0x00000000000523ee     0x2fd6 Output/Release/Obj/mouseware_nrf52810/security_manager.o
- .debug_info    0x00000000000553c4     0x2384 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
- .debug_info    0x0000000000057748     0x1213 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
- .debug_info    0x000000000005895b     0x24eb Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
- .debug_info    0x000000000005ae46      0x5c1 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
- .debug_info    0x000000000005b407      0xe0b Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
- .debug_info    0x000000000005c212     0x237e Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
- .debug_info    0x000000000005e590      0x442 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
+ .debug_info    0x0000000000023879     0x6e49 Output/Release/Obj/mouseware_nrf52810/main.o
+ .debug_info    0x000000000002a6c2     0x1717 Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
+ .debug_info    0x000000000002bdd9      0x48e Output/Release/Obj/mouseware_nrf52810/ble_cus.o
+ .debug_info    0x000000000002c267      0xf2a Output/Release/Obj/mouseware_nrf52810/max17048.o
+ .debug_info    0x000000000002d191     0x1744 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
+ .debug_info    0x000000000002e8d5     0x1ad2 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
+ .debug_info    0x00000000000303a7     0x2b81 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
+ .debug_info    0x0000000000032f28     0x2466 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+ .debug_info    0x000000000003538e     0x241b Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+ .debug_info    0x00000000000377a9      0x191 Output/Release/Obj/mouseware_nrf52810/ble_link_ctx_manager.o
+ .debug_info    0x000000000003793a      0xc6c Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
+ .debug_info    0x00000000000385a6     0x1ec9 Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
+ .debug_info    0x000000000003a46f     0x1b62 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
+ .debug_info    0x000000000003bfd1     0x37b2 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+ .debug_info    0x000000000003f783     0x15c0 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+ .debug_info    0x0000000000040d43     0x3460 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+ .debug_info    0x00000000000441a3     0x1ec0 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+ .debug_info    0x0000000000046063     0x1b58 Output/Release/Obj/mouseware_nrf52810/peer_database.o
+ .debug_info    0x0000000000047bbb      0x666 Output/Release/Obj/mouseware_nrf52810/peer_id.o
+ .debug_info    0x0000000000048221     0x3c0c Output/Release/Obj/mouseware_nrf52810/peer_manager.o
+ .debug_info    0x000000000004be2d     0x276f Output/Release/Obj/mouseware_nrf52810/peer_manager_handler.o
+ .debug_info    0x000000000004e59c      0x508 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
+ .debug_info    0x000000000004eaa4     0x3953 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+ .debug_info    0x00000000000523f7     0x2fd6 Output/Release/Obj/mouseware_nrf52810/security_manager.o
+ .debug_info    0x00000000000553cd     0x2384 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
+ .debug_info    0x0000000000057751     0x1213 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+ .debug_info    0x0000000000058964     0x24eb Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
+ .debug_info    0x000000000005ae4f      0x5c1 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
+ .debug_info    0x000000000005b410      0xe0b Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
+ .debug_info    0x000000000005c21b     0x237e Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+ .debug_info    0x000000000005e599      0x442 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
 
-.debug_abbrev   0x0000000000000000     0xeaa5
+.debug_abbrev   0x0000000000000000     0xea8b
  .debug_abbrev  0x0000000000000000       0x12 Output/Release/Obj/mouseware_nrf52810/thumb_crt0.o
  .debug_abbrev  0x0000000000000012      0x274 Output/Release/Obj/mouseware_nrf52810/nrf_log_backend_rtt.o
  .debug_abbrev  0x0000000000000286      0x214 Output/Release/Obj/mouseware_nrf52810/nrf_log_backend_serial.o
@@ -13663,39 +13662,39 @@ LOAD linker stubs
  .debug_abbrev  0x0000000000006551      0x41b Output/Release/Obj/mouseware_nrf52810/nrfx_timer.o
  .debug_abbrev  0x000000000000696c      0x331 Output/Release/Obj/mouseware_nrf52810/bsp.o
  .debug_abbrev  0x0000000000006c9d      0x328 Output/Release/Obj/mouseware_nrf52810/bsp_btn_ble.o
- .debug_abbrev  0x0000000000006fc5      0x6fe Output/Release/Obj/mouseware_nrf52810/main.o
- .debug_abbrev  0x00000000000076c3      0x347 Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
- .debug_abbrev  0x0000000000007a0a      0x1d7 Output/Release/Obj/mouseware_nrf52810/ble_cus.o
- .debug_abbrev  0x0000000000007be1      0x36d Output/Release/Obj/mouseware_nrf52810/max17048.o
- .debug_abbrev  0x0000000000007f4e      0x2ef Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
- .debug_abbrev  0x000000000000823d      0x3dd Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
- .debug_abbrev  0x000000000000861a      0x4a5 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
- .debug_abbrev  0x0000000000008abf      0x54b Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
- .debug_abbrev  0x000000000000900a      0x4e2 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
- .debug_abbrev  0x00000000000094ec       0xda Output/Release/Obj/mouseware_nrf52810/ble_link_ctx_manager.o
- .debug_abbrev  0x00000000000095c6      0x270 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
- .debug_abbrev  0x0000000000009836      0x404 Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
- .debug_abbrev  0x0000000000009c3a      0x39e Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
- .debug_abbrev  0x0000000000009fd8      0x567 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
- .debug_abbrev  0x000000000000a53f      0x42c Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
- .debug_abbrev  0x000000000000a96b      0x586 Output/Release/Obj/mouseware_nrf52810/id_manager.o
- .debug_abbrev  0x000000000000aef1      0x4f9 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
- .debug_abbrev  0x000000000000b3ea      0x516 Output/Release/Obj/mouseware_nrf52810/peer_database.o
- .debug_abbrev  0x000000000000b900      0x25b Output/Release/Obj/mouseware_nrf52810/peer_id.o
- .debug_abbrev  0x000000000000bb5b      0x535 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
- .debug_abbrev  0x000000000000c090      0x418 Output/Release/Obj/mouseware_nrf52810/peer_manager_handler.o
- .debug_abbrev  0x000000000000c4a8      0x237 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
- .debug_abbrev  0x000000000000c6df      0x571 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
- .debug_abbrev  0x000000000000cc50      0x520 Output/Release/Obj/mouseware_nrf52810/security_manager.o
- .debug_abbrev  0x000000000000d170      0x422 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
- .debug_abbrev  0x000000000000d592      0x4fa Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
- .debug_abbrev  0x000000000000da8c      0x45d Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
- .debug_abbrev  0x000000000000dee9      0x205 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
- .debug_abbrev  0x000000000000e0ee      0x3eb Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
- .debug_abbrev  0x000000000000e4d9      0x409 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
- .debug_abbrev  0x000000000000e8e2      0x1c3 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
+ .debug_abbrev  0x0000000000006fc5      0x6e4 Output/Release/Obj/mouseware_nrf52810/main.o
+ .debug_abbrev  0x00000000000076a9      0x347 Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
+ .debug_abbrev  0x00000000000079f0      0x1d7 Output/Release/Obj/mouseware_nrf52810/ble_cus.o
+ .debug_abbrev  0x0000000000007bc7      0x36d Output/Release/Obj/mouseware_nrf52810/max17048.o
+ .debug_abbrev  0x0000000000007f34      0x2ef Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
+ .debug_abbrev  0x0000000000008223      0x3dd Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
+ .debug_abbrev  0x0000000000008600      0x4a5 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
+ .debug_abbrev  0x0000000000008aa5      0x54b Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+ .debug_abbrev  0x0000000000008ff0      0x4e2 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+ .debug_abbrev  0x00000000000094d2       0xda Output/Release/Obj/mouseware_nrf52810/ble_link_ctx_manager.o
+ .debug_abbrev  0x00000000000095ac      0x270 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
+ .debug_abbrev  0x000000000000981c      0x404 Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
+ .debug_abbrev  0x0000000000009c20      0x39e Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
+ .debug_abbrev  0x0000000000009fbe      0x567 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+ .debug_abbrev  0x000000000000a525      0x42c Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+ .debug_abbrev  0x000000000000a951      0x586 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+ .debug_abbrev  0x000000000000aed7      0x4f9 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+ .debug_abbrev  0x000000000000b3d0      0x516 Output/Release/Obj/mouseware_nrf52810/peer_database.o
+ .debug_abbrev  0x000000000000b8e6      0x25b Output/Release/Obj/mouseware_nrf52810/peer_id.o
+ .debug_abbrev  0x000000000000bb41      0x535 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
+ .debug_abbrev  0x000000000000c076      0x418 Output/Release/Obj/mouseware_nrf52810/peer_manager_handler.o
+ .debug_abbrev  0x000000000000c48e      0x237 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
+ .debug_abbrev  0x000000000000c6c5      0x571 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+ .debug_abbrev  0x000000000000cc36      0x520 Output/Release/Obj/mouseware_nrf52810/security_manager.o
+ .debug_abbrev  0x000000000000d156      0x422 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
+ .debug_abbrev  0x000000000000d578      0x4fa Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+ .debug_abbrev  0x000000000000da72      0x45d Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
+ .debug_abbrev  0x000000000000decf      0x205 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
+ .debug_abbrev  0x000000000000e0d4      0x3eb Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
+ .debug_abbrev  0x000000000000e4bf      0x409 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+ .debug_abbrev  0x000000000000e8c8      0x1c3 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
 
-.debug_aranges  0x0000000000000000     0x1f18
+.debug_aranges  0x0000000000000000     0x1f10
  .debug_aranges
                 0x0000000000000000       0x98 Output/Release/Obj/mouseware_nrf52810/thumb_crt0.o
  .debug_aranges
@@ -13777,67 +13776,67 @@ LOAD linker stubs
  .debug_aranges
                 0x0000000000000f08       0x38 Output/Release/Obj/mouseware_nrf52810/bsp_btn_ble.o
  .debug_aranges
-                0x0000000000000f40      0x100 Output/Release/Obj/mouseware_nrf52810/main.o
+                0x0000000000000f40       0xf8 Output/Release/Obj/mouseware_nrf52810/main.o
  .debug_aranges
-                0x0000000000001040       0x50 Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
+                0x0000000000001038       0x50 Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
  .debug_aranges
-                0x0000000000001090       0x30 Output/Release/Obj/mouseware_nrf52810/ble_cus.o
+                0x0000000000001088       0x30 Output/Release/Obj/mouseware_nrf52810/ble_cus.o
  .debug_aranges
-                0x00000000000010c0       0x38 Output/Release/Obj/mouseware_nrf52810/max17048.o
+                0x00000000000010b8       0x38 Output/Release/Obj/mouseware_nrf52810/max17048.o
  .debug_aranges
-                0x00000000000010f8      0x108 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
+                0x00000000000010f0      0x108 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
  .debug_aranges
-                0x0000000000001200       0x80 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
+                0x00000000000011f8       0x80 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
  .debug_aranges
-                0x0000000000001280       0x80 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
+                0x0000000000001278       0x80 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
  .debug_aranges
-                0x0000000000001300       0x80 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+                0x00000000000012f8       0x80 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
  .debug_aranges
-                0x0000000000001380       0xe0 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+                0x0000000000001378       0xe0 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
  .debug_aranges
-                0x0000000000001460       0x20 Output/Release/Obj/mouseware_nrf52810/ble_link_ctx_manager.o
+                0x0000000000001458       0x20 Output/Release/Obj/mouseware_nrf52810/ble_link_ctx_manager.o
  .debug_aranges
-                0x0000000000001480       0x60 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
+                0x0000000000001478       0x60 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
  .debug_aranges
-                0x00000000000014e0       0x50 Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
+                0x00000000000014d8       0x50 Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
  .debug_aranges
-                0x0000000000001530       0x48 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
+                0x0000000000001528       0x48 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
  .debug_aranges
-                0x0000000000001578       0xc8 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x0000000000001570       0xc8 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
  .debug_aranges
-                0x0000000000001640       0x88 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+                0x0000000000001638       0x88 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
  .debug_aranges
-                0x00000000000016c8      0x108 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x00000000000016c0      0x108 Output/Release/Obj/mouseware_nrf52810/id_manager.o
  .debug_aranges
-                0x00000000000017d0       0xa8 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+                0x00000000000017c8       0xa8 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
  .debug_aranges
-                0x0000000000001878       0x78 Output/Release/Obj/mouseware_nrf52810/peer_database.o
+                0x0000000000001870       0x78 Output/Release/Obj/mouseware_nrf52810/peer_database.o
  .debug_aranges
-                0x00000000000018f0       0x70 Output/Release/Obj/mouseware_nrf52810/peer_id.o
+                0x00000000000018e8       0x70 Output/Release/Obj/mouseware_nrf52810/peer_id.o
  .debug_aranges
-                0x0000000000001960      0x170 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
+                0x0000000000001958      0x170 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
  .debug_aranges
-                0x0000000000001ad0       0x68 Output/Release/Obj/mouseware_nrf52810/peer_manager_handler.o
+                0x0000000000001ac8       0x68 Output/Release/Obj/mouseware_nrf52810/peer_manager_handler.o
  .debug_aranges
-                0x0000000000001b38       0x38 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
+                0x0000000000001b30       0x38 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
  .debug_aranges
-                0x0000000000001b70       0x98 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+                0x0000000000001b68       0x98 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
  .debug_aranges
-                0x0000000000001c08       0xb8 Output/Release/Obj/mouseware_nrf52810/security_manager.o
+                0x0000000000001c00       0xb8 Output/Release/Obj/mouseware_nrf52810/security_manager.o
  .debug_aranges
-                0x0000000000001cc0       0x50 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
+                0x0000000000001cb8       0x50 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
  .debug_aranges
-                0x0000000000001d10       0x90 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+                0x0000000000001d08       0x90 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
  .debug_aranges
-                0x0000000000001da0       0x58 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
+                0x0000000000001d98       0x58 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
  .debug_aranges
-                0x0000000000001df8       0x28 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
+                0x0000000000001df0       0x28 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
  .debug_aranges
-                0x0000000000001e20       0x50 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
+                0x0000000000001e18       0x50 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
  .debug_aranges
-                0x0000000000001e70       0x78 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+                0x0000000000001e68       0x78 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
  .debug_aranges
-                0x0000000000001ee8       0x30 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
+                0x0000000000001ee0       0x30 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
 
 .debug_str      0x0000000000000000    0x8fe26
  .debug_str     0x0000000000000000       0xbf Output/Release/Obj/mouseware_nrf52810/thumb_crt0.o
@@ -13920,7 +13919,7 @@ LOAD linker stubs
  .debug_str     0x000000000007b7fb     0x5bd5 Output/Release/Obj/mouseware_nrf52810/bsp_btn_ble.o
                                       0x6d14f (size before relaxing)
  .debug_str     0x00000000000813d0     0x70ec Output/Release/Obj/mouseware_nrf52810/main.o
-                                      0x7cf75 (size before relaxing)
+                                      0x7cf61 (size before relaxing)
  .debug_str     0x00000000000884bc      0x77b Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
                                       0x6c0ec (size before relaxing)
  .debug_str     0x0000000000088c37      0x18d Output/Release/Obj/mouseware_nrf52810/ble_cus.o
@@ -13982,7 +13981,7 @@ LOAD linker stubs
  .debug_str     0x000000000008fd91       0x95 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
                                       0x6229c (size before relaxing)
 
-.debug_ranges   0x0000000000000000     0x5588
+.debug_ranges   0x0000000000000000     0x5578
  .debug_ranges  0x0000000000000000       0x90 Output/Release/Obj/mouseware_nrf52810/thumb_crt0.o
  .debug_ranges  0x0000000000000090       0x70 Output/Release/Obj/mouseware_nrf52810/nrf_log_backend_rtt.o
  .debug_ranges  0x0000000000000100       0x28 Output/Release/Obj/mouseware_nrf52810/nrf_log_backend_serial.o
@@ -14021,39 +14020,39 @@ LOAD linker stubs
  .debug_ranges  0x0000000000002c28      0x2e0 Output/Release/Obj/mouseware_nrf52810/nrfx_timer.o
  .debug_ranges  0x0000000000002f08       0x68 Output/Release/Obj/mouseware_nrf52810/bsp.o
  .debug_ranges  0x0000000000002f70       0x40 Output/Release/Obj/mouseware_nrf52810/bsp_btn_ble.o
- .debug_ranges  0x0000000000002fb0      0x4c0 Output/Release/Obj/mouseware_nrf52810/main.o
- .debug_ranges  0x0000000000003470       0x78 Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
- .debug_ranges  0x00000000000034e8       0x20 Output/Release/Obj/mouseware_nrf52810/ble_cus.o
- .debug_ranges  0x0000000000003508       0xc8 Output/Release/Obj/mouseware_nrf52810/max17048.o
- .debug_ranges  0x00000000000035d0      0x188 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
- .debug_ranges  0x0000000000003758      0x1a0 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
- .debug_ranges  0x00000000000038f8      0x140 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
- .debug_ranges  0x0000000000003a38      0x1b0 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
- .debug_ranges  0x0000000000003be8      0x230 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
- .debug_ranges  0x0000000000003e18       0x10 Output/Release/Obj/mouseware_nrf52810/ble_link_ctx_manager.o
- .debug_ranges  0x0000000000003e28       0x50 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
- .debug_ranges  0x0000000000003e78       0x98 Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
- .debug_ranges  0x0000000000003f10       0xa0 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
- .debug_ranges  0x0000000000003fb0      0x210 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
- .debug_ranges  0x00000000000041c0      0x108 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
- .debug_ranges  0x00000000000042c8      0x210 Output/Release/Obj/mouseware_nrf52810/id_manager.o
- .debug_ranges  0x00000000000044d8      0x160 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
- .debug_ranges  0x0000000000004638      0x228 Output/Release/Obj/mouseware_nrf52810/peer_database.o
- .debug_ranges  0x0000000000004860       0xc8 Output/Release/Obj/mouseware_nrf52810/peer_id.o
- .debug_ranges  0x0000000000004928      0x240 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
- .debug_ranges  0x0000000000004b68      0x160 Output/Release/Obj/mouseware_nrf52810/peer_manager_handler.o
- .debug_ranges  0x0000000000004cc8       0x58 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
- .debug_ranges  0x0000000000004d20      0x248 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
- .debug_ranges  0x0000000000004f68      0x1a0 Output/Release/Obj/mouseware_nrf52810/security_manager.o
- .debug_ranges  0x0000000000005108       0x60 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
- .debug_ranges  0x0000000000005168      0x198 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
- .debug_ranges  0x0000000000005300       0xd8 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
- .debug_ranges  0x00000000000053d8       0x50 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
- .debug_ranges  0x0000000000005428       0xa8 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
- .debug_ranges  0x00000000000054d0       0x98 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
- .debug_ranges  0x0000000000005568       0x20 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
+ .debug_ranges  0x0000000000002fb0      0x4b0 Output/Release/Obj/mouseware_nrf52810/main.o
+ .debug_ranges  0x0000000000003460       0x78 Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
+ .debug_ranges  0x00000000000034d8       0x20 Output/Release/Obj/mouseware_nrf52810/ble_cus.o
+ .debug_ranges  0x00000000000034f8       0xc8 Output/Release/Obj/mouseware_nrf52810/max17048.o
+ .debug_ranges  0x00000000000035c0      0x188 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
+ .debug_ranges  0x0000000000003748      0x1a0 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
+ .debug_ranges  0x00000000000038e8      0x140 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
+ .debug_ranges  0x0000000000003a28      0x1b0 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+ .debug_ranges  0x0000000000003bd8      0x230 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+ .debug_ranges  0x0000000000003e08       0x10 Output/Release/Obj/mouseware_nrf52810/ble_link_ctx_manager.o
+ .debug_ranges  0x0000000000003e18       0x50 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
+ .debug_ranges  0x0000000000003e68       0x98 Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
+ .debug_ranges  0x0000000000003f00       0xa0 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
+ .debug_ranges  0x0000000000003fa0      0x210 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+ .debug_ranges  0x00000000000041b0      0x108 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+ .debug_ranges  0x00000000000042b8      0x210 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+ .debug_ranges  0x00000000000044c8      0x160 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+ .debug_ranges  0x0000000000004628      0x228 Output/Release/Obj/mouseware_nrf52810/peer_database.o
+ .debug_ranges  0x0000000000004850       0xc8 Output/Release/Obj/mouseware_nrf52810/peer_id.o
+ .debug_ranges  0x0000000000004918      0x240 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
+ .debug_ranges  0x0000000000004b58      0x160 Output/Release/Obj/mouseware_nrf52810/peer_manager_handler.o
+ .debug_ranges  0x0000000000004cb8       0x58 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
+ .debug_ranges  0x0000000000004d10      0x248 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+ .debug_ranges  0x0000000000004f58      0x1a0 Output/Release/Obj/mouseware_nrf52810/security_manager.o
+ .debug_ranges  0x00000000000050f8       0x60 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
+ .debug_ranges  0x0000000000005158      0x198 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+ .debug_ranges  0x00000000000052f0       0xd8 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
+ .debug_ranges  0x00000000000053c8       0x50 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
+ .debug_ranges  0x0000000000005418       0xa8 Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
+ .debug_ranges  0x00000000000054c0       0x98 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+ .debug_ranges  0x0000000000005558       0x20 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
 
-.debug_frame    0x0000000000000000     0x64f4
+.debug_frame    0x0000000000000000     0x64d4
  .debug_frame   0x0000000000000000       0x88 Output/Release/Obj/mouseware_nrf52810/nrf_log_backend_rtt.o
  .debug_frame   0x0000000000000088       0x48 Output/Release/Obj/mouseware_nrf52810/nrf_log_backend_serial.o
  .debug_frame   0x00000000000000d0       0x2c Output/Release/Obj/mouseware_nrf52810/nrf_log_default_backends.o
@@ -14091,37 +14090,37 @@ LOAD linker stubs
  .debug_frame   0x0000000000002804      0x190 Output/Release/Obj/mouseware_nrf52810/nrfx_timer.o
  .debug_frame   0x0000000000002994      0x128 Output/Release/Obj/mouseware_nrf52810/bsp.o
  .debug_frame   0x0000000000002abc       0xa0 Output/Release/Obj/mouseware_nrf52810/bsp_btn_ble.o
- .debug_frame   0x0000000000002b5c      0x3e0 Output/Release/Obj/mouseware_nrf52810/main.o
- .debug_frame   0x0000000000002f3c      0x160 Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
- .debug_frame   0x000000000000309c       0x68 Output/Release/Obj/mouseware_nrf52810/ble_cus.o
- .debug_frame   0x0000000000003104       0xd0 Output/Release/Obj/mouseware_nrf52810/max17048.o
- .debug_frame   0x00000000000031d4      0x4d0 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
- .debug_frame   0x00000000000036a4      0x228 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
- .debug_frame   0x00000000000038cc      0x188 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
- .debug_frame   0x0000000000003a54      0x1a8 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
- .debug_frame   0x0000000000003bfc      0x390 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
- .debug_frame   0x0000000000003f8c       0x30 Output/Release/Obj/mouseware_nrf52810/ble_link_ctx_manager.o
- .debug_frame   0x0000000000003fbc       0xf0 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
- .debug_frame   0x00000000000040ac       0xac Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
- .debug_frame   0x0000000000004158       0xc4 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
- .debug_frame   0x000000000000421c      0x358 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
- .debug_frame   0x0000000000004574      0x1c8 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
- .debug_frame   0x000000000000473c      0x3c8 Output/Release/Obj/mouseware_nrf52810/id_manager.o
- .debug_frame   0x0000000000004b04      0x254 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
- .debug_frame   0x0000000000004d58      0x1e4 Output/Release/Obj/mouseware_nrf52810/peer_database.o
- .debug_frame   0x0000000000004f3c      0x124 Output/Release/Obj/mouseware_nrf52810/peer_id.o
- .debug_frame   0x0000000000005060      0x530 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
- .debug_frame   0x0000000000005590      0x27c Output/Release/Obj/mouseware_nrf52810/peer_manager_handler.o
- .debug_frame   0x000000000000580c       0xa8 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
- .debug_frame   0x00000000000058b4      0x2b4 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
- .debug_frame   0x0000000000005b68      0x2d0 Output/Release/Obj/mouseware_nrf52810/security_manager.o
- .debug_frame   0x0000000000005e38       0xf8 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
- .debug_frame   0x0000000000005f30      0x1a8 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
- .debug_frame   0x00000000000060d8       0xfc Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
- .debug_frame   0x00000000000061d4       0x5c Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
- .debug_frame   0x0000000000006230      0x10c Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
- .debug_frame   0x000000000000633c      0x158 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
- .debug_frame   0x0000000000006494       0x60 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
+ .debug_frame   0x0000000000002b5c      0x3c0 Output/Release/Obj/mouseware_nrf52810/main.o
+ .debug_frame   0x0000000000002f1c      0x160 Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
+ .debug_frame   0x000000000000307c       0x68 Output/Release/Obj/mouseware_nrf52810/ble_cus.o
+ .debug_frame   0x00000000000030e4       0xd0 Output/Release/Obj/mouseware_nrf52810/max17048.o
+ .debug_frame   0x00000000000031b4      0x4d0 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
+ .debug_frame   0x0000000000003684      0x228 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
+ .debug_frame   0x00000000000038ac      0x188 Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
+ .debug_frame   0x0000000000003a34      0x1a8 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+ .debug_frame   0x0000000000003bdc      0x390 Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+ .debug_frame   0x0000000000003f6c       0x30 Output/Release/Obj/mouseware_nrf52810/ble_link_ctx_manager.o
+ .debug_frame   0x0000000000003f9c       0xf0 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
+ .debug_frame   0x000000000000408c       0xac Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
+ .debug_frame   0x0000000000004138       0xc4 Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
+ .debug_frame   0x00000000000041fc      0x358 Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+ .debug_frame   0x0000000000004554      0x1c8 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+ .debug_frame   0x000000000000471c      0x3c8 Output/Release/Obj/mouseware_nrf52810/id_manager.o
+ .debug_frame   0x0000000000004ae4      0x254 Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+ .debug_frame   0x0000000000004d38      0x1e4 Output/Release/Obj/mouseware_nrf52810/peer_database.o
+ .debug_frame   0x0000000000004f1c      0x124 Output/Release/Obj/mouseware_nrf52810/peer_id.o
+ .debug_frame   0x0000000000005040      0x530 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
+ .debug_frame   0x0000000000005570      0x27c Output/Release/Obj/mouseware_nrf52810/peer_manager_handler.o
+ .debug_frame   0x00000000000057ec       0xa8 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
+ .debug_frame   0x0000000000005894      0x2b4 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+ .debug_frame   0x0000000000005b48      0x2d0 Output/Release/Obj/mouseware_nrf52810/security_manager.o
+ .debug_frame   0x0000000000005e18       0xf8 Output/Release/Obj/mouseware_nrf52810/ble_nus.o
+ .debug_frame   0x0000000000005f10      0x1a8 Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+ .debug_frame   0x00000000000060b8       0xfc Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
+ .debug_frame   0x00000000000061b4       0x5c Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
+ .debug_frame   0x0000000000006210      0x10c Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
+ .debug_frame   0x000000000000631c      0x158 Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+ .debug_frame   0x0000000000006474       0x60 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
 
 .debug_loc      0x0000000000000000    0x20760
  .debug_loc     0x0000000000000000      0x1af Output/Release/Obj/mouseware_nrf52810/nrf_log_backend_rtt.o
@@ -14193,7 +14192,7 @@ LOAD linker stubs
  .debug_loc     0x00000000000206c8       0x98 Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
 
 .debug_pubnames
-                0x0000000000000000    0x1bd63
+                0x0000000000000000    0x1bd4b
  .debug_pubnames
                 0x0000000000000000      0x12a Output/Release/Obj/mouseware_nrf52810/nrf_log_backend_rtt.o
  .debug_pubnames
@@ -14269,67 +14268,67 @@ LOAD linker stubs
  .debug_pubnames
                 0x0000000000009e69      0x52c Output/Release/Obj/mouseware_nrf52810/bsp_btn_ble.o
  .debug_pubnames
-                0x000000000000a395     0x2aeb Output/Release/Obj/mouseware_nrf52810/main.o
+                0x000000000000a395     0x2ad3 Output/Release/Obj/mouseware_nrf52810/main.o
  .debug_pubnames
-                0x000000000000ce80      0x1e3 Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
+                0x000000000000ce68      0x1e3 Output/Release/Obj/mouseware_nrf52810/icm20602_i2c.o
  .debug_pubnames
-                0x000000000000d063      0x2f6 Output/Release/Obj/mouseware_nrf52810/ble_cus.o
+                0x000000000000d04b      0x2f6 Output/Release/Obj/mouseware_nrf52810/ble_cus.o
  .debug_pubnames
-                0x000000000000d359      0x1b3 Output/Release/Obj/mouseware_nrf52810/max17048.o
+                0x000000000000d341      0x1b3 Output/Release/Obj/mouseware_nrf52810/max17048.o
  .debug_pubnames
-                0x000000000000d50c      0x3c3 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
+                0x000000000000d4f4      0x3c3 Output/Release/Obj/mouseware_nrf52810/SEGGER_RTT.o
  .debug_pubnames
-                0x000000000000d8cf      0x749 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
+                0x000000000000d8b7      0x749 Output/Release/Obj/mouseware_nrf52810/ble_advdata.o
  .debug_pubnames
-                0x000000000000e018      0xa5d Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
+                0x000000000000e000      0xa5d Output/Release/Obj/mouseware_nrf52810/ble_advertising.o
  .debug_pubnames
-                0x000000000000ea75      0x9e3 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
+                0x000000000000ea5d      0x9e3 Output/Release/Obj/mouseware_nrf52810/ble_conn_params.o
  .debug_pubnames
-                0x000000000000f458      0x91f Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
+                0x000000000000f440      0x91f Output/Release/Obj/mouseware_nrf52810/ble_conn_state.o
  .debug_pubnames
-                0x000000000000fd77       0x28 Output/Release/Obj/mouseware_nrf52810/ble_link_ctx_manager.o
+                0x000000000000fd5f       0x28 Output/Release/Obj/mouseware_nrf52810/ble_link_ctx_manager.o
  .debug_pubnames
-                0x000000000000fd9f      0x338 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
+                0x000000000000fd87      0x338 Output/Release/Obj/mouseware_nrf52810/ble_srv_common.o
  .debug_pubnames
-                0x00000000000100d7      0xa8a Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
+                0x00000000000100bf      0xa8a Output/Release/Obj/mouseware_nrf52810/nrf_ble_gatt.o
  .debug_pubnames
-                0x0000000000010b61      0x6fe Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
+                0x0000000000010b49      0x6fe Output/Release/Obj/mouseware_nrf52810/nrf_ble_qwr.o
  .debug_pubnames
-                0x000000000001125f     0x138a Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
+                0x0000000000011247     0x138a Output/Release/Obj/mouseware_nrf52810/gatt_cache_manager.o
  .debug_pubnames
-                0x00000000000125e9      0x8c4 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
+                0x00000000000125d1      0x8c4 Output/Release/Obj/mouseware_nrf52810/gatts_cache_manager.o
  .debug_pubnames
-                0x0000000000012ead     0x131a Output/Release/Obj/mouseware_nrf52810/id_manager.o
+                0x0000000000012e95     0x131a Output/Release/Obj/mouseware_nrf52810/id_manager.o
  .debug_pubnames
-                0x00000000000141c7      0x9eb Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
+                0x00000000000141af      0x9eb Output/Release/Obj/mouseware_nrf52810/peer_data_storage.o
  .debug_pubnames
-                0x0000000000014bb2      0x81c Output/Release/Obj/mouseware_nrf52810/peer_database.o
+                0x0000000000014b9a      0x81c Output/Release/Obj/mouseware_nrf52810/peer_database.o
  .debug_pubnames
-                0x00000000000153ce      0x11d Output/Release/Obj/mouseware_nrf52810/peer_id.o
+                0x00000000000153b6      0x11d Output/Release/Obj/mouseware_nrf52810/peer_id.o
  .debug_pubnames
-                0x00000000000154eb      0xb81 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
+                0x00000000000154d3      0xb81 Output/Release/Obj/mouseware_nrf52810/peer_manager.o
  .debug_pubnames
-                0x000000000001606c      0xd3e Output/Release/Obj/mouseware_nrf52810/peer_manager_handler.o
+                0x0000000000016054      0xd3e Output/Release/Obj/mouseware_nrf52810/peer_manager_handler.o
  .debug_pubnames
-                0x0000000000016daa       0xb1 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
+                0x0000000000016d92       0xb1 Output/Release/Obj/mouseware_nrf52810/pm_buffer.o
  .debug_pubnames
-                0x0000000000016e5b     0x1215 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
+                0x0000000000016e43     0x1215 Output/Release/Obj/mouseware_nrf52810/security_dispatcher.o
  .debug_pubnames
-                0x0000000000018070      0xc4e Output/Release/Obj/mouseware_nrf52810/security_manager.o
+                0x0000000000018058      0xc4e Output/Release/Obj/mouseware_nrf52810/security_manager.o
  .debug_pubnames
-                0x0000000000018cbe      0x83f Output/Release/Obj/mouseware_nrf52810/ble_nus.o
+                0x0000000000018ca6      0x83f Output/Release/Obj/mouseware_nrf52810/ble_nus.o
  .debug_pubnames
-                0x00000000000194fd      0x80f Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
+                0x00000000000194e5      0x80f Output/Release/Obj/mouseware_nrf52810/nrf_sdh.o
  .debug_pubnames
-                0x0000000000019d0c      0x449 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
+                0x0000000000019cf4      0x449 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_ble.o
  .debug_pubnames
-                0x000000000001a155      0x652 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
+                0x000000000001a13d      0x652 Output/Release/Obj/mouseware_nrf52810/nrf_sdh_soc.o
  .debug_pubnames
-                0x000000000001a7a7      0x50f Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
+                0x000000000001a78f      0x50f Output/Release/Obj/mouseware_nrf52810/ble_dfu_unbonded.o
  .debug_pubnames
-                0x000000000001acb6      0xeff Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
+                0x000000000001ac9e      0xeff Output/Release/Obj/mouseware_nrf52810/ble_dfu.o
  .debug_pubnames
-                0x000000000001bbb5      0x1ae Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
+                0x000000000001bb9d      0x1ae Output/Release/Obj/mouseware_nrf52810/nrf_dfu_svci.o
 
 .debug_pubtypes
                 0x0000000000000000    0x12d17
